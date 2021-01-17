@@ -1,9 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { IBeacon, Beacon } from '@ionic-native/ibeacon/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
-import { Platform } from '@ionic/angular';
-import { BackgroundMode } from '@ionic-native/background-mode/ngx';
-import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-home',
@@ -21,21 +18,12 @@ export class HomePage {
 
   constructor(private ibeacon: IBeacon,
     private toast: Toast,
-    private platform: Platform,
-    private ngZone: NgZone,
-    private backgroundMode: BackgroundMode,
-    private localNotification: LocalNotifications) {
+    private ngZone: NgZone) {
 
   }
 
   ionViewDidEnter(): void {
 
-    this.backgroundMode.setDefaults({
-      title: 'My app',
-      text: 'You have running service'
-    })
-
-    this.backgroundMode.enable();
 
     // Request permission to use location on iOS
     this.ibeacon.requestAlwaysAuthorization();
@@ -70,15 +58,6 @@ export class HomePage {
         error => this.alert(`Failed to begin monitoring: ${error}`)
       );
 
-
-
-    this.backgroundMode.on("activate").subscribe(
-      () => {
-        this.backgroundMode.configure({
-          silent: false
-        })
-      }
-    )
   }
 
   /* toast message */
@@ -92,25 +71,9 @@ export class HomePage {
 
   onBeaconConnected(beacons: Beacon[]) {
     this.beacons = []
-    this.single_notification();
     this.ngZone.run(() => {
       beacons.forEach(beacon => this.beacons.push(beacon))
     });
   }
 
-  single_notification() {
-    // Schedule a single notification
-
-    this.localNotification.requestPermission().then(
-      (permission) => {
-        if (permission) {
-          this.localNotification.schedule({
-            id: 1,
-            text: 'Single Local Notification',
-            data: { secret: 'secret' }
-          });
-        }
-      })
-
-  }
 }
