@@ -1,7 +1,5 @@
 {
-  "name": "beacon-test",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "chiese-romaniche",
+  "integrations": {},
   "type": "angular"
 }
