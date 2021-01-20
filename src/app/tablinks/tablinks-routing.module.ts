@@ -25,6 +25,9 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tablinks/dashboard',
         pathMatch: 'full'
+      },{
+        path: 'chiesa-detail/:id',
+        loadChildren: () => import('../chiesa-detail/chiesa-detail.module').then(m => m.ChiesaDetailPageModule)
       }
     ]
   },

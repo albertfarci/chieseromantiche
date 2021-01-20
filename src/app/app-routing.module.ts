@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'preferiti',
     loadChildren: () => import('./preferiti/preferiti.module').then( m => m.PreferitiPageModule)
+  },
+  {
+    path: 'chiesa-detail',
+    loadChildren: () => import('./chiesa-detail/chiesa-detail.module').then( m => m.ChiesaDetailPageModule)
   }
 ];
 @NgModule({
