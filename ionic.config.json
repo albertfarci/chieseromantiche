@@ -1,5 +1,7 @@
 {
   "name": "chiese-romaniche",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
