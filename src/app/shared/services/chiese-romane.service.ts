@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { filter, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChieseRomaneService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getAllChiese(){
+  getAllChiese(): Observable<any> {
     return this.httpClient.get("/assets/chieseRomane.json");
   }
+
 }

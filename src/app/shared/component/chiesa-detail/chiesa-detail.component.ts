@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { VideoPlayer } from '@ionic-native/video-player/ngx';
 
 @Component({
   selector: 'app-chiesa-detail-component',
@@ -9,7 +8,7 @@ import { VideoPlayer } from '@ionic-native/video-player/ngx';
 export class ChiesaDetailComponent implements OnInit {
 
   @Input() chiesa;
-  
+
   slideOpts = {
     on: {
       beforeInit() {
@@ -70,14 +69,9 @@ export class ChiesaDetailComponent implements OnInit {
     }
   }
 
-  constructor(private videoPlayer: VideoPlayer) { }
+  constructor() { }
 
   ngOnInit() {
-    this.videoPlayer.play('file:///android_asset/www/movie.mp4').then(() => {
-    console.log('video completed');
-    }).catch(err => {
-    console.log(err);
-    });
   }
 
 }
