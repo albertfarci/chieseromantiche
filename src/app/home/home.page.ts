@@ -41,7 +41,7 @@ export class HomePage {
         error => console.error()
       );
 
-    let beaconRegion = this.ibeacon.BeaconRegion('deskBeacon', '23A01AF0-232A-4518-9C0E-323FB773F5EF');
+    let beaconRegion = this.ibeacon.BeaconRegion('deskBeacon', '476C6F62-616C-2D54-6167-000000000000');
 
     this.alert(`Scanning has started`);
 
