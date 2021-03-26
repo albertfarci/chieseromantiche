@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
+import { FullScreenImage } from '@ionic-native/full-screen-image/ngx';
 
 @Component({
   selector: 'app-chiesa-detail-component',
   templateUrl: './chiesa-detail.component.html',
   styleUrls: ['./chiesa-detail.component.scss'],
 })
-export class ChiesaDetailComponent implements OnInit {
+export class ChiesaDetailComponent implements OnChanges {
 
   @Input() chiesa;
 
@@ -69,9 +70,14 @@ export class ChiesaDetailComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private fullScreenImage: FullScreenImage) { }
 
-  ngOnInit() {
+  ngOnChanges() {
+  }
+
+  showImageFullScren(path) {
+    console.log(path)
+    this.fullScreenImage.showImageURL(path)
   }
 
 }

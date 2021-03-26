@@ -18,7 +18,7 @@
 
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide *ngFor="let foto of chiesa?.pmdb_galleria_foto">
-      <img src="{{foto}}" />
+      <img src="{{foto}}" (click)="showImageFullScren(foto)" />
     </ion-slide>
   </ion-slides>
   <ion-card-content>
