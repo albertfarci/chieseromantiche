@@ -1,16 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="title-condense">
-      {{chiesa?.title.rendered}}
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Scheda</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <app-chiesa-detail-component [chiesa]="chiesa" (title)="setTitle($event)"></app-chiesa-detail-component>
+  <app-chiesa-detail-component [chiesa]="chiesa | async" (title)="setTitle($event)"></app-chiesa-detail-component>
 </ion-content>

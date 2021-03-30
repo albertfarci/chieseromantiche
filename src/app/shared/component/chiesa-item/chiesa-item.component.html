@@ -1,11 +1,12 @@
-<ion-card [routerLink]="['/tablinks/chiesa-detail', chiesa.id]" >
+<ion-card [routerLink]="['/tablinks/chiesa-detail', chiesa.id]">
 
-  <img *ngIf="chiesa.pmdb_galleria_foto.length > 0" src="{{chiesa.pmdb_galleria_foto[0]}}" />
+  <img *ngIf="chiesa.pmdb_galleria_foto.length > 0" src="{{chiesa?.pmdb_galleria_foto[0]}}" />
   <img *ngIf="chiesa.pmdb_galleria_foto.length == 0" src="assets/church.jpg" />
-  <ion-card-header >
-    <ion-card-title>{{chiesa.title.rendered}}</ion-card-title>
+  <ion-card-header>
+    <ion-card-title [innerHTML]="chiesa?.title.rendered">
+    </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    {{chiesa.pmdb_location_city}}  
+    {{chiesa?.pmdb_location_city}}
   </ion-card-content>
 </ion-card>

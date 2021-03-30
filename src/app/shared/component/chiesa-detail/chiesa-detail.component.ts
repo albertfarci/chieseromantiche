@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { FullScreenImage } from '@ionic-native/full-screen-image/ngx';
 
 @Component({
   selector: 'app-chiesa-detail-component',
@@ -70,14 +69,6 @@ export class ChiesaDetailComponent implements OnChanges {
     }
   }
 
-  constructor(private fullScreenImage: FullScreenImage) { }
-
-  ngOnChanges() {
-  }
-
-  showImageFullScren(path) {
-    console.log(path)
-    this.fullScreenImage.showImageURL(path)
-  }
+  constructor() { }
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  chieseRomane;
+  constructor(private chieseRomaneService: ChieseRomaneService) { }
+
+  ngOnInit() {
+    this.chieseRomane = this.chieseRomaneService.getAllChiese()
+  }
+
+  getAllChiese() {
+    //return this.chieseRomaneService.getAllChiese();
+  }
 
 }
