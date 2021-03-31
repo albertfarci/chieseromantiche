@@ -8,11 +8,13 @@ import { ChieseListComponent } from "./component/chiese-list/chiese-list.compone
 import { HttpClientModule } from '@angular/common/http';
 import { ChieseRomaneService } from "./services/chiese-romane.service";
 import { ChiesaDetailComponent } from "./component/chiesa-detail/chiesa-detail.component";
+import { TitleDeleteComaPipe } from './pipes/title.pipe';
+import { TextDeleteSpanPipe } from './pipes/text.pipe';
 
 @NgModule({
-  declarations: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent],
+  declarations: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
   exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent],
-  providers : [ChieseRomaneService]
+  providers: [ChieseRomaneService]
 })
-export class SharedModule {}
+export class SharedModule { }

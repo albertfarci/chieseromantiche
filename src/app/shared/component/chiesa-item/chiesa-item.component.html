@@ -3,7 +3,7 @@
   <img *ngIf="chiesa.pmdb_galleria_foto.length > 0" src="{{chiesa?.pmdb_galleria_foto[0]}}" />
   <img *ngIf="chiesa.pmdb_galleria_foto.length == 0" src="assets/church.jpg" />
   <ion-card-header>
-    <ion-card-title [innerHTML]="chiesa?.title.rendered">
+    <ion-card-title [innerHTML]="chiesa?.title.rendered | titleDeleteComa">
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>

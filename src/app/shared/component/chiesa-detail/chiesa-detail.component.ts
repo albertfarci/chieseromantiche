@@ -5,7 +5,7 @@ import { Component, Input, OnChanges } from '@angular/core';
   templateUrl: './chiesa-detail.component.html',
   styleUrls: ['./chiesa-detail.component.scss'],
 })
-export class ChiesaDetailComponent implements OnChanges {
+export class ChiesaDetailComponent {
 
   @Input() chiesa;
 
