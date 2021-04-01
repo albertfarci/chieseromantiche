@@ -4,7 +4,7 @@
 
     <ion-item lines="none">
       <ion-card-title class="ion-text-wrap" [innerHTML]="chiesa[0]?.title.rendered | titleDeleteComa"></ion-card-title>
-      <ion-button fill="outline" slot="end">
+      <ion-button fill="outline" slot="end" (click)="addToPreferiti()">
         <ion-icon name="heart-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -40,6 +40,8 @@
       <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.narrazione">
       </ion-label>
     </ion-item>
+    <iframe width="100%" height="315" [src]="iframeSanitize()" allowfullscreen>
+    </iframe>,
 
   </ion-card-content>
 </ion-card>

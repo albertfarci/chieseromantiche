@@ -1,4 +1,7 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser"
 
 @Component({
   selector: 'app-chiesa-detail-component',
@@ -69,6 +72,23 @@ export class ChiesaDetailComponent {
     }
   }
 
-  constructor() { }
+  constructor(
+    private nativeStorage: NativeStorage,
+    private domSanitizer: DomSanitizer) { }
+
+  addToPreferiti() {
+    console.log(this.chiesa)
+
+    this.nativeStorage.setItem('myitem', { property: 'value', anotherProperty: 'anotherValue' })
+      .then(
+        () => console.log('Stored item!'),
+        error => console.error('Error storing item', error)
+      );
+
+  }
+
+  iframeSanitize() {
+    return this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.chieseromanichesardegna.it/virtual/10/index.html');
+  }
 
 }
