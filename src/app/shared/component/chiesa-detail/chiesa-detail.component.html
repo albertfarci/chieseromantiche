@@ -40,7 +40,8 @@
       <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.narrazione">
       </ion-label>
     </ion-item>
-    <iframe width="100%" height="315" [src]="iframeSanitize()" allowfullscreen>
+    <iframe id="iframe" [hidden]="!showIframe" width="100%" height="315" [src]="iframeSanitize()"
+      allowfullscreen="true">
     </iframe>,
 
   </ion-card-content>

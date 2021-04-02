@@ -10,6 +10,8 @@ import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 export class ChiesaDetailPage implements OnInit {
 
   chiesa
+  showIframe: boolean = true;
+
   constructor(
     private activeRoute: ActivatedRoute,
     private chieseRomaneService: ChieseRomaneService
@@ -21,5 +23,14 @@ export class ChiesaDetailPage implements OnInit {
     this.chiesa = this.chieseRomaneService.getChiesaById(id);
   }
 
+  ionViewWillEnter() {
 
+    console.log("true")
+    this.showIframe = true
+  }
+
+  ionViewDidLeave() {
+    console.log("false")
+    this.showIframe = false
+  }
 }
