@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
+import { DashboardBeaconDataService } from './services/dashboard-beacon-data.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { DashboardPage } from './dashboard.page';
     IonicModule,
     DashboardPageRoutingModule
   ],
+  providers: [DashboardBeaconDataService],
   declarations: [DashboardPage]
 })
-export class DashboardPageModule {}
+export class DashboardPageModule { }

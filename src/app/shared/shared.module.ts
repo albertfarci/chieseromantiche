@@ -12,11 +12,12 @@ import { TitleDeleteComaPipe } from './pipes/title.pipe';
 import { TextDeleteSpanPipe } from './pipes/text.pipe';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
+import { IBeacon } from '@ionic-native/ibeacon/ngx';
 
 @NgModule({
   declarations: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
   exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent],
-  providers: [ChieseRomaneService, NativeStorage, Toast]
+  providers: [ChieseRomaneService, NativeStorage, Toast, IBeacon]
 })
 export class SharedModule { }
