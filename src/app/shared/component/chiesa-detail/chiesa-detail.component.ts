@@ -1,7 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
-
-import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser"
 import { Toast } from '@ionic-native/toast/ngx';
 
 @Component({
@@ -12,7 +10,7 @@ import { Toast } from '@ionic-native/toast/ngx';
 export class ChiesaDetailComponent {
 
   @Input() chiesa;
-
+  @Input() virtualTour: boolean = false;
   @Input() showIframe: boolean = true;
 
   slideOpts = {
@@ -77,8 +75,7 @@ export class ChiesaDetailComponent {
 
   constructor(
     private toast: Toast,
-    private nativeStorage: NativeStorage,
-    private domSanitizer: DomSanitizer) { }
+    private nativeStorage: NativeStorage) { }
 
   addToPreferiti() {
     console.log(this.chiesa)
@@ -89,10 +86,6 @@ export class ChiesaDetailComponent {
         error => console.error('Error storing item', error)
       );
 
-  }
-
-  iframeSanitize() {
-    return this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.chieseromanichesardegna.it/virtual/10/index.html');
   }
 
 
