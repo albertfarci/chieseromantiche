@@ -8,15 +8,18 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
 import { DashboardBeaconDataService } from './services/dashboard-beacon-data.service';
+import { SharedModule } from '../shared/shared.module';
+import { VirtualTourComponent } from './components/virtual-tour/virtual-tour.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardPageRoutingModule
+    DashboardPageRoutingModule,
+    SharedModule
   ],
   providers: [DashboardBeaconDataService],
-  declarations: [DashboardPage]
+  declarations: [DashboardPage, VirtualTourComponent]
 })
 export class DashboardPageModule { }

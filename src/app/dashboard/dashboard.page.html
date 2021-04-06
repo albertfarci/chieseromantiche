@@ -17,34 +17,8 @@
   <div *ngIf="didStartMonitoringForRegion">didStartMonitoringForRegion</div>
   <div *ngIf="didRangeBeaconsInRegion">didRangeBeaconsInRegion</div>
 
-  <ion-list no-lines *ngIf="didRangeBeaconsInRegion || didStartMonitoringForRegion">
-    <ion-item *ngFor="let device of beacons">
-      <ion-grid>
-        <ion-row>
-          <ion-col>Major</ion-col>
-          <ion-col>{{device.major}}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>Minor</ion-col>
-          <ion-col>{{device.minor}}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>RSSI</ion-col>
-          <ion-col>{{device.rssi}}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>Proximity</ion-col>
-          <ion-col>{{device.proximity}}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>Transmission Power</ion-col>
-          <ion-col>{{device.tx}}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>Accuracy</ion-col>
-          <ion-col>{{device.accuracy}}</ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
-  </ion-list>
+  <app-virtual-tour [chieseRomane]="chieseRomane | async" [beaconInterno]="beaconInterno"
+    [beaconEsterno]="beaconEsterno" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
+  </app-virtual-tour>
+
 </ion-content>

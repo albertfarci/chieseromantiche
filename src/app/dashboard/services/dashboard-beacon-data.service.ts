@@ -39,11 +39,6 @@ export class DashboardBeaconDataService {
     return this.delegate.didRangeBeaconsInRegion();
   }
 
-  startRangingBeaconsInRegion() {
-
-
-  }
-
   /* toast message */
   alert(msg: string) {
     this.toast.show(msg, '5000', 'center').subscribe(

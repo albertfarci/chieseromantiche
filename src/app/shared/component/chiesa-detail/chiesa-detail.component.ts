@@ -1,6 +1,7 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
+import { DashboardTemplateService } from 'src/app/dashboard/services/dashboard-template.service';
 
 @Component({
   selector: 'app-chiesa-detail-component',
@@ -12,6 +13,8 @@ export class ChiesaDetailComponent {
   @Input() chiesa;
   @Input() virtualTour: boolean = false;
   @Input() showIframe: boolean = true;
+  @Input() interno: boolean = false;
+  @Input() esterno: boolean = false;
 
   slideOpts = {
     on: {
@@ -75,7 +78,9 @@ export class ChiesaDetailComponent {
 
   constructor(
     private toast: Toast,
-    private nativeStorage: NativeStorage) { }
+    private nativeStorage: NativeStorage,
+    public dashboardTemplateService: DashboardTemplateService) { }
+
 
   addToPreferiti() {
     console.log(this.chiesa)
