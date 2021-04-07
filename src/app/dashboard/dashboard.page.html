@@ -14,9 +14,6 @@
     </ion-toolbar>
   </ion-header>
 
-  <div *ngIf="didStartMonitoringForRegion">didStartMonitoringForRegion</div>
-  <div *ngIf="didRangeBeaconsInRegion">didRangeBeaconsInRegion</div>
-
   <app-virtual-tour [chieseRomane]="chieseRomane | async" [beaconInterno]="beaconInterno"
     [beaconEsterno]="beaconEsterno" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
   </app-virtual-tour>

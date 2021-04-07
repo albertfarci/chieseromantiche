@@ -1,3 +1,5 @@
 <app-chiesa-detail-component *ngIf="chiesaScanned[0]" [chiesa]="chiesaScanned" [interno]="!!beaconInterno"
     [esterno]="!!beaconEsterno" [virtualTour]="virtualTour" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
 </app-chiesa-detail-component>
+
+<app-loading *ngIf="!chiesaScanned[0]"></app-loading>

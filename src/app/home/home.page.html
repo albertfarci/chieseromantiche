@@ -1,17 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Chiese
+      {{ 'TITLE' | translatePipe}}
     </ion-title>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Chiese</ion-title>
+
     </ion-toolbar>
+
   </ion-header>
 
-  <app-chiese-list [chieseRomane]="chieseRomane | async"></app-chiese-list>
+  <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>
+
+  <div>
+    <app-chiese-list [chieseRomane]="chieseRomane | async"></app-chiese-list>
+  </div>
+
 </ion-content>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IBeacon } from '@ionic-native/ibeacon/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
+import { BluetoothLE } from '@ionic-native/bluetooth-le/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,24 @@ export class DashboardBeaconDataService {
   beaconRegion
   constructor(
     private toast: Toast,
-    private ibeacon: IBeacon
+    private ibeacon: IBeacon,
+    public bluetoothle: BluetoothLE
   ) {
     this.setUpService();
   }
 
   setUpService() {
+    var params = {
+      request: true
+    };
+
+    this.bluetoothle.initialize(params).subscribe(
+      (data) => {
+
+
+      }
+    )
+
     // Request permission to use location on iOS
     this.ibeacon.requestAlwaysAuthorization();
     // create a new delegate and register it with the native layer
@@ -31,11 +44,10 @@ export class DashboardBeaconDataService {
       },
       error => this.alert(`Failed to begin monitoring: ${error}`)
     );
+
   }
 
   didRangeBeaconsInRegion() {
-    // Subscribe to some of the delegate's event handlers
-    this.alert(JSON.stringify(this.delegate))
     return this.delegate.didRangeBeaconsInRegion();
   }
 

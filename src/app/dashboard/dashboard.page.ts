@@ -42,7 +42,6 @@ export class DashboardPage {
       .subscribe(
         data => {
 
-          this.alert(JSON.stringify(data))
           this.didRangeBeaconsInRegion = true
           if (data.beacons.length > 0) this.onBeaconConnected(data.beacons);
 
@@ -66,7 +65,7 @@ export class DashboardPage {
     this.ngZone.run(() => {
       beacons.forEach(beacon => {
 
-        if (beacon.rssi >= -90 && beacon.major == 0) {
+        if (beacon.rssi >= -90 && beacon.minor == 1) {
           this.beaconEsterno = beacon
           return;
         }

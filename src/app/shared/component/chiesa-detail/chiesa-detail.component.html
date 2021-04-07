@@ -14,6 +14,12 @@
         <ion-icon name="radio-outline"></ion-icon>
       </ion-button>
     </ion-item>
+    <ion-item *ngIf="!virtualTour">
+      <ion-label class="ion-text-wrap">Inidicazioni stradali</ion-label>
+      <ion-button fill="outline" slot="end">
+        <ion-icon name="navigate-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
   </ion-card-header>
 
   <ion-slides pager="true" [options]="slideOpts">
@@ -24,26 +30,47 @@
   <ion-card-content>
 
     <ion-item lines="none">
-      <ion-icon slot="start" name="pin-outline"></ion-icon>
+      <ion-icon color="primary" slot="start" name="pin-outline"></ion-icon>
       <ion-label [innerHTML]="chiesa[0]?.pmdb_location_city"></ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" name="map-outline"></ion-icon>
+      <ion-icon color="primary" slot="start" name="map-outline"></ion-icon>
       <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.pmdb_location_address"></ion-label>
 
     </ion-item>
 
+    <ion-item lines="none">
+      <ion-icon color="primary" slot="start" name="text-outline"></ion-icon>
+      <ion-label>Narrazione</ion-label>
+    </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" name="text-outline"></ion-icon>
       <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.narrazione">
       </ion-label>
     </ion-item>
 
-    <iframe *ngIf="virtualTour && chiesa[0].virtual_tour && esterno" id="iframe" [hidden]="!showIframe" width="100%"
-      height="315" [src]="dashboardTemplateService.iframeSanitize(chiesa[0])" allowfullscreen="true">
-    </iframe>
+    <ion-item lines="none" *ngIf="virtualTour && esterno">
+      <ion-icon color="primary" slot="start" name="film-outline"></ion-icon>
+      <ion-label>Multimedia</ion-label>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-margin-top" *ngIf="virtualTour && chiesa[0].audio && esterno">
+      <audio controls style="width: 100%;">
+        <source [src]="chiesa[0]?.audio" type="audio/mp4">
+      </audio>
+    </ion-item>
+
+    <ion-item class="ion-margin-top" *ngIf="virtualTour && chiesa[0].virtual_tour && esterno">
+      <iframe id="iframe" [hidden]="!showIframe" width="100%" height="315"
+        [src]="dashboardTemplateService.iframeSanitize(chiesa[0])" allowfullscreen="true">
+      </iframe>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.bibliografia">
+      </ion-label>
+    </ion-item>
 
   </ion-card-content>
 </ion-card>
