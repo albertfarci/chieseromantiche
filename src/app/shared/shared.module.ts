@@ -13,11 +13,14 @@ import { TextDeleteSpanPipe } from './pipes/text.pipe';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
 import { IBeacon } from '@ionic-native/ibeacon/ngx';
+import { LoadingComponent } from './component/loading/loading.component';
+import { BluetoothLE } from '@ionic-native/bluetooth-le/ngx';
+import { TranslatePipe } from './pipes/translate.pipe';
 
 @NgModule({
-  declarations: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe],
+  declarations: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
-  exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent],
-  providers: [ChieseRomaneService, NativeStorage, Toast, IBeacon]
+  exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, TranslatePipe],
+  providers: [ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE]
 })
 export class SharedModule { }

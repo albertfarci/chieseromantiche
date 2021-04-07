@@ -4,6 +4,9 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { TranslateService } from '@ngx-translate/core';
+import { Globalization } from '@ionic-native/globalization/ngx';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,7 +16,9 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private globalization: Globalization,
+    private translateService: TranslateService
   ) {
     this.initializeApp();
   }
@@ -22,6 +27,12 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.globalization.getPreferredLanguage()
+        .then(lang => {
+          this.translateService.use(lang.value.split('-')[0])
+        })
+        .catch(e => this.translateService.use('it'));
     });
   }
 }
