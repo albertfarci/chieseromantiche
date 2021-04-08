@@ -1,0 +1,5 @@
+<ion-item class="ion-text-end">
+  <ion-label *ngIf="chieseList?.length > 1">{{chieseList?.length}} {{ 'chiese' | translatePipe}}</ion-label>
+  <ion-label *ngIf="chieseList?.length == 1">{{chieseList?.length}} {{ 'chiesa' | translatePipe}}</ion-label>
+
+</ion-item>

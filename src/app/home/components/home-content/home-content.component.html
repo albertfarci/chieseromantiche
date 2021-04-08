@@ -1,0 +1,13 @@
+<div *ngIf="listMapConfiguration?.listVisible">
+  <app-chiese-list [chieseRomane]="chieseList">
+  </app-chiese-list>
+
+  <div #loading>
+    <app-home-loader></app-home-loader>
+  </div>
+
+</div>
+
+<div *ngIf="listMapConfiguration?.mapVisible">
+  Mappa
+</div>
