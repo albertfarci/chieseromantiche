@@ -1,8 +1,15 @@
 {
-    "TITLE": "Hello sir",
-    "TITLE_2": "Hello {{value}}",
-    "description": "Ooohh .... did you just translate this text ?",
-    "data": {
-        "name": "My name is {{name_value}}"
-    }
+    "chiese": "Churches",
+    "scansione": "Scanning",
+    "preferiti": "Favourites",
+    "visita-interattiva": "Interactive visit",
+    "inzia-visita-interattiva": "Let's start the interactive visit",
+    "indicazioni-stradali": "Directions",
+    "narrazione": "Storytelling",
+    "multimedia": "Multimedia",
+    "istruzioni-sblocco-multimedia": "How to unblock multimedia content?",
+    "premi-su-tab-scansione": "Tap on scanning",
+    "attiva-bluetooth": "Turn on bluetooth",
+    "avvicinati-alla-chiesa": "Approach the church",
+    "scopri-i-multimedia": "Discover multimedia contents"
 }

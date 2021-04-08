@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { TablinksPageRoutingModule } from './tablinks-routing.module';
 
 import { TablinksPage } from './tablinks.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TablinksPageRoutingModule
+    TablinksPageRoutingModule,
+    SharedModule
   ],
   declarations: [TablinksPage]
 })
-export class TablinksPageModule {}
+export class TablinksPageModule { }

@@ -23,9 +23,9 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tablinks/dashboard',
+        redirectTo: '/tablinks/home',
         pathMatch: 'full'
-      },{
+      }, {
         path: 'chiesa-detail/:id',
         loadChildren: () => import('../chiesa-detail/chiesa-detail.module').then(m => m.ChiesaDetailPageModule)
       }
@@ -33,7 +33,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tablinks/dashboard',
+    redirectTo: '/tablinks/home',
     pathMatch: 'full'
   }
 ];

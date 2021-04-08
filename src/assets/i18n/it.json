@@ -1,8 +1,15 @@
 {
-    "TITLE": "Ciao signore",
-    "TITLE_2": "Ciao {{value}}",
-    "description": "Ooohh .... vuoi tradurre questo testo ?",
-    "data": {
-        "name": "Il mio nome è is {{name_value}}"
-    }
+    "chiese": "Chiese",
+    "scansione": "Scansione",
+    "preferiti": "Preferiti",
+    "visita-interattiva": "Visita interattiva",
+    "inzia-visita-interattiva": "Inizia la visita interattiva",
+    "indicazioni-stradali": "Indicazioni stradali",
+    "narrazione": "Narrazione",
+    "multimedia": "Multimedia",
+    "istruzioni-sblocco-multimedia": "Come sbloccare i contenuti multimediali?",
+    "premi-su-tab-scansione": "Premi su scansione",
+    "attiva-bluetooth": "Attiva bluetooth",
+    "avvicinati-alla-chiesa": "Avvicinati alla chiesa",
+    "scopri-i-multimedia": "Scopri i contenuti multimediali"
 }

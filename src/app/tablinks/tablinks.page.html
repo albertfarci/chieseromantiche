@@ -3,17 +3,23 @@
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon name="map-outline"></ion-icon>
-      <ion-label>Map</ion-label>
+      <ion-label>
+        {{ 'chiese' | translatePipe}}
+      </ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="dashboard">
       <ion-icon name="radio-outline"></ion-icon>
-      <ion-label>Scansione</ion-label>
+      <ion-label>
+        {{ 'scansione' | translatePipe}}
+      </ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="preferiti">
       <ion-icon name="heart-outline"></ion-icon>
-      <ion-label>Preferiti</ion-label>
+      <ion-label>
+        {{ 'preferiti' | translatePipe}}
+      </ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 

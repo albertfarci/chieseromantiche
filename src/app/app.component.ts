@@ -27,12 +27,17 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      if (window.Intl && typeof window.Intl === 'object') {
+        this.translateService.use(navigator.language)
+      } else {
+        this.globalization.getPreferredLanguage()
+          .then(lang => {
+            console.log(lang)
+            this.translateService.use(lang.value.split('-')[0])
+          })
+          .catch(e => this.translateService.use('it'));
+      }
 
-      this.globalization.getPreferredLanguage()
-        .then(lang => {
-          this.translateService.use(lang.value.split('-')[0])
-        })
-        .catch(e => this.translateService.use('it'));
     });
   }
 }
