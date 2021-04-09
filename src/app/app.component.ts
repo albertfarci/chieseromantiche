@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { TranslateService } from '@ngx-translate/core';
 import { Globalization } from '@ionic-native/globalization/ngx';
-
+import { Toast } from '@ionic-native/toast/ngx';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -18,6 +18,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private globalization: Globalization,
+    private toast: Toast,
     private translateService: TranslateService
   ) {
     this.initializeApp();
@@ -26,18 +27,23 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      if (window.Intl && typeof window.Intl === 'object') {
-        this.translateService.use(navigator.language)
-      } else {
-        this.globalization.getPreferredLanguage()
-          .then(lang => {
-            console.log(lang)
-            this.translateService.use(lang.value.split('-')[0])
-          })
-          .catch(e => this.translateService.use('it'));
-      }
+      this.splashScreen.hide(); this.globalization.getPreferredLanguage()
+        .then(lang => {
+          this.alert(JSON.stringify(lang.value))
+          this.translateService.use(lang.value.split('-')[0])
+        })
+        .catch(e => this.translateService.use('it'));
+
 
     });
+  }
+
+
+  /* toast message */
+  alert(msg: string) {
+    this.toast.show(msg, '5000', 'center').subscribe(
+      toast => {
+      }
+    );
   }
 }

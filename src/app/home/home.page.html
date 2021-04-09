@@ -10,23 +10,32 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        {{ 'chiese' | translatePipe}}
-      </ion-title>
-
+        {{ 'chiese' | translatePipe}}</ion-title>
     </ion-toolbar>
-
   </ion-header>
+  <ion-grid class="gridMap" style="height: 100%;     width: 100%;">
+    <ion-row style="height: 15%;     width: 100%; ">
+      <ion-searchbar showcancelbutton="always" (ionInput)="filterList($event)">
+      </ion-searchbar>
+    </ion-row>
+    <ion-row *ngIf="chieseRomane | async as chieseList; else loading" style="height: 85%;     width: 100%; ">
+      <ion-row style="height: 20%;     width: 100%; " [hidden]=" chieseList.length == 0">
+        <app-map-list-tabs style="height: 100%;     width: 100%; " [chieseList]="chieseList"
+          [listMapConfiguration]="listMapSettingsConfiguration" (tabSelected)="getListMapSettings($event)">
+        </app-map-list-tabs>
+      </ion-row>
+      <ion-row [hidden]="chieseList.length != 0">
+        <app-no-found style="height: 100%;     width: 100%; " [phase]="'nessun-risultato-trovato'">
+        </app-no-found>
+      </ion-row>
+      <ion-row style="height: 80%;     width: 100%; ">
+        <app-home-content style="height: 100%;     width: 100%; " *ngIf="chieseList.length > 0"
+          [chieseList]="chieseList" [listMapConfiguration]="listMapSettingsConfiguration">
+        </app-home-content>
+      </ion-row>
 
-  <ion-searchbar showcancelbutton="always" (ionInput)="filterList($event)">
-  </ion-searchbar>
+    </ion-row>
 
-  <div *ngIf="chieseRomane | async as chieseList; else loading">
-    <app-map-list-tabs [chieseList]="chieseList" *ngIf="!hideFilter"
-      [listMapConfiguration]="listMapSettingsConfiguration" (tabSelected)="getListMapSettings($event)">
-    </app-map-list-tabs>
-
-    <app-home-content [chieseList]="chieseList" [listMapConfiguration]="listMapSettingsConfiguration">
-    </app-home-content>
-  </div>
+  </ion-grid>
 
 </ion-content>

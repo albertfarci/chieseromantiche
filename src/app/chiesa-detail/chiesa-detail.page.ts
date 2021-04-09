@@ -24,13 +24,10 @@ export class ChiesaDetailPage implements OnInit {
   }
 
   ionViewWillEnter() {
-
-    console.log("true")
     this.showIframe = true
   }
 
   ionViewDidLeave() {
-    console.log("false")
     this.showIframe = false
   }
 }

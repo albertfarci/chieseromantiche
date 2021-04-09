@@ -16,11 +16,13 @@ import { IBeacon } from '@ionic-native/ibeacon/ngx';
 import { LoadingComponent } from './component/loading/loading.component';
 import { BluetoothLE } from '@ionic-native/bluetooth-le/ngx';
 import { TranslatePipe } from './pipes/translate.pipe';
+import { MapComponent } from './component/map/map.component';
+import { NoFoundComponent } from './component/no-found/no-found.component';
 
 @NgModule({
-  declarations: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
+  declarations: [NoFoundComponent, MapComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
-  exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, TranslatePipe],
+  exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, TranslatePipe, MapComponent, NoFoundComponent],
   providers: [ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE]
 })
 export class SharedModule { }

@@ -16,6 +16,7 @@ export class HomePage {
 
   hideFilter: boolean = false;
   listMapSettingsConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
+
   constructor(
     private chieseRomaneService: ChieseRomaneService,
     private homeTemplateSettingsService: HomeTemplateSettingsService) { }
@@ -34,14 +35,12 @@ export class HomePage {
         map(result =>
           result.filter(one => one.title.rendered.includes(evt.srcElement.value))
         )
-
       )
     }
 
   }
 
   getListMapSettings(listMapTypes) {
-    console.log(this.homeTemplateSettingsService.getListMapSettings(listMapTypes))
     this.listMapSettingsConfiguration = this.homeTemplateSettingsService.getListMapSettings(listMapTypes);
   }
 

@@ -16,7 +16,6 @@ export class DashboardTemplateService {
     const escaped = chiesa.virtual_tour;
 
     const str = unescape(escaped)
-    console.log(str)
 
     let match;
     while ((match = regex.exec(str)) !== null) {

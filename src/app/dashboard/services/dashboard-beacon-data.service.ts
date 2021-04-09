@@ -14,7 +14,7 @@ export class DashboardBeaconDataService {
     private ibeacon: IBeacon,
     public bluetoothle: BluetoothLE
   ) {
-    this.setUpService();
+    this.setUpService()
   }
 
   setUpService() {

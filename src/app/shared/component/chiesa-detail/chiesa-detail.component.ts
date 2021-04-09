@@ -83,8 +83,6 @@ export class ChiesaDetailComponent {
 
 
   addToPreferiti() {
-    console.log(this.chiesa)
-
     this.nativeStorage.setItem(JSON.stringify(this.chiesa[0].id), this.chiesa[0])
       .then(
         () => this.alert('Stored item!'),

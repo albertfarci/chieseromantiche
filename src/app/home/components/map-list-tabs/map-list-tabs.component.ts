@@ -20,6 +20,7 @@ export class MapListTabsComponent implements OnInit {
     this.tabSelected.emit(listMapTypes);
   }
 
+
   get ListMapTypes() {
     return ListMapTypes
   }

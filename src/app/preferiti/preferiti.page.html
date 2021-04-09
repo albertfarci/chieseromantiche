@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Preferiti
+      {{ 'preferiti' | translatePipe}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,9 +10,15 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">
+        {{ 'preferiti' | translatePipe}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <app-chiese-list [chieseRomane]="chieseRomaneFiltered"></app-chiese-list>
+
+
+  <ion-row [hidden]="chieseRomaneFiltered.length != 0">
+    <app-no-found style="height: 100%;     width: 100%; " [phase]="'naviga-chiese-aggiungi-preferiti'"></app-no-found>
+  </ion-row>
 </ion-content>

@@ -1,8 +1,5 @@
-<div *ngFor="let chiesa of chieseRomane">
-
-  <app-chiesa-item [chiesa]="chiesa"></app-chiesa-item>
-</div>
-
-<div *ngIf="chieseRomane?.length == 0">
-  Niente da mostrare
-</div>
+<ion-list>
+  <div *ngFor="let chiesa of chieseRomane">
+    <app-chiesa-item [chiesa]="chiesa"></app-chiesa-item>
+  </div>
+</ion-list>
