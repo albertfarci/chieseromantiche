@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
 import { DashboardTemplateService } from 'src/app/dashboard/services/dashboard-template.service';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 
 @Component({
   selector: 'app-chiesa-detail-component',
@@ -77,6 +78,7 @@ export class ChiesaDetailComponent {
   }
 
   constructor(
+    private launchNavigator: LaunchNavigator,
     private toast: Toast,
     private nativeStorage: NativeStorage,
     public dashboardTemplateService: DashboardTemplateService) { }
@@ -91,6 +93,11 @@ export class ChiesaDetailComponent {
 
   }
 
+  openMaps(){
+    this.launchNavigator.navigate([50.279306, -5.163158], {
+      start: "50.342847, -4.749904"
+    });
+  }
 
   /* toast message */
   alert(msg) {
