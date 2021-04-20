@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HomeTemplateSettingsService } from './services/home-template-settings.service';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from './models/list-map-settings.model';
+import { FirebaseService } from '../shared/services/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomePage {
 
   constructor(
     private chieseRomaneService: ChieseRomaneService,
-    private homeTemplateSettingsService: HomeTemplateSettingsService) { }
+    private homeTemplateSettingsService: HomeTemplateSettingsService,
+    private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     this.chieseRomane = this.chieseRomaneService.getAllChiese()

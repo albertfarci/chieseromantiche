@@ -29,6 +29,11 @@ export class DashboardBeaconDataService {
       }
     )
 
+    this.setUpBeacon();
+
+  }
+
+  setUpBeacon() {
     // Request permission to use location on iOS
     this.ibeacon.requestAlwaysAuthorization();
     // create a new delegate and register it with the native layer
@@ -41,10 +46,10 @@ export class DashboardBeaconDataService {
 
     this.ibeacon.startRangingBeaconsInRegion(this.beaconRegion).then(
       (data) => {
+
       },
       error => this.alert(`Failed to begin monitoring: ${error}`)
     );
-
   }
 
   didRangeBeaconsInRegion() {

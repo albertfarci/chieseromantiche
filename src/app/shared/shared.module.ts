@@ -18,11 +18,13 @@ import { BluetoothLE } from '@ionic-native/bluetooth-le/ngx';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { MapComponent } from './component/map/map.component';
 import { NoFoundComponent } from './component/no-found/no-found.component';
+import { FirebaseService } from './services/firebase.service';
+import { Device } from '@ionic-native/device/ngx';
 
 @NgModule({
   declarations: [NoFoundComponent, MapComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
   exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, TranslatePipe, MapComponent, NoFoundComponent],
-  providers: [ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE]
+  providers: [ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE, FirebaseService, Device]
 })
 export class SharedModule { }
