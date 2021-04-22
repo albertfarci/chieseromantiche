@@ -18,6 +18,7 @@ export class PreferitiPage {
 
   ionViewWillEnter() {
 
+    this.chieseRomaneFiltered = []
     this.ngZone.run(() => {
       this.nativeStorage.keys()
         .then(

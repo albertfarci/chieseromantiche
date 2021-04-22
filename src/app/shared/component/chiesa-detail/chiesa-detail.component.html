@@ -4,7 +4,7 @@
 
     <ion-item lines="none">
       <ion-card-title class="ion-text-wrap" [innerHTML]="chiesa[0]?.title.rendered | titleDeleteComa"></ion-card-title>
-      <ion-button *ngIf="!virtualTour" fill="outline" slot="end" (click)="addToPreferiti()">
+      <ion-button *ngIf="!virtualTour" [hidden]="isPrefferedYet" fill="outline" slot="end" (click)="addToPreferiti()">
         <ion-icon name="heart-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -58,7 +58,7 @@
       </ion-label>
     </ion-item>
 
-    <div *ngIf="virtualTour && esterno">
+    <div *ngIf="virtualTour && interno">
       <ion-item lines="none">
         <ion-icon color="primary" slot="start" name="film-outline"></ion-icon>
         <ion-label>

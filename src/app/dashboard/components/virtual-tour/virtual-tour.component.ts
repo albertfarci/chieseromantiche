@@ -71,13 +71,13 @@ export class VirtualTourComponent implements OnChanges {
           }
         ).filter(
           chiesa =>
-            (chiesa.beacons[0].uuid == this.beaconInterno?.uuid &&
-              chiesa.beacons[0].major == this.beaconInterno?.major.toString() &&
-              chiesa.beacons[0].minor == this.beaconInterno?.minor.toString())
+            (chiesa.beacons[0].uuid == this.beaconEsterno?.uuid &&
+              chiesa.beacons[0].major == this.beaconEsterno?.major.toString() &&
+              chiesa.beacons[0].minor == this.beaconEsterno?.minor.toString())
             ||
-            (chiesa.beacons[1].uuid == this.beaconEsterno?.uuid &&
-              chiesa.beacons[1].major == this.beaconEsterno?.major.toString() &&
-              chiesa.beacons[1].minor == this.beaconEsterno?.minor.toString())
+            (chiesa.beacons[1].uuid == this.beaconInterno?.uuid &&
+              chiesa.beacons[1].major == this.beaconInterno?.major.toString() &&
+              chiesa.beacons[1].minor == this.beaconInterno?.minor.toString())
         )
     }
   }

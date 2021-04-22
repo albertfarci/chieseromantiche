@@ -1,9 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgZone } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
 import { DashboardTemplateService } from 'src/app/dashboard/services/dashboard-template.service';
-import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
-
 @Component({
   selector: 'app-chiesa-detail-component',
   templateUrl: './chiesa-detail.component.html',
@@ -16,6 +14,8 @@ export class ChiesaDetailComponent {
   @Input() showIframe: boolean = true;
   @Input() interno: boolean = false;
   @Input() esterno: boolean = false;
+
+  isPrefferedYet: boolean = false;
 
   slideOpts = {
     on: {
@@ -78,10 +78,33 @@ export class ChiesaDetailComponent {
   }
 
   constructor(
-    private launchNavigator: LaunchNavigator,
     private toast: Toast,
+    private ngZone: NgZone,
     private nativeStorage: NativeStorage,
     public dashboardTemplateService: DashboardTemplateService) { }
+
+
+  ionViewWillEnter() {
+
+    this.ngZone.run(() => {
+
+      this.nativeStorage.keys()
+        .then(
+          data => this.dataRetrived(data),
+          error => console.error(error)
+        );
+    });
+  }
+
+  dataRetrived = (data) => {
+
+    data.map(
+      chiesaId => {
+        this.alert((JSON.parse(chiesaId) == this.chiesa.id));
+        if (JSON.parse(chiesaId) == this.chiesa.id) this.isPrefferedYet = true;
+      }
+    )
+  };
 
 
   addToPreferiti() {
@@ -91,12 +114,6 @@ export class ChiesaDetailComponent {
         error => console.error('Error storing item', error)
       );
 
-  }
-
-  openMaps(){
-    this.launchNavigator.navigate([50.279306, -5.163158], {
-      start: "50.342847, -4.749904"
-    });
   }
 
   /* toast message */

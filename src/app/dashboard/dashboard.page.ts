@@ -72,17 +72,16 @@ export class DashboardPage {
         if (beacon.rssi < -90 && beacon.minor == 1 && this.beaconEsterno) {
 
           this.firebaseService.saveExitRegion();
-          this.beaconEsterno = this.beaconInterno
           return;
         }
 
-        if (beacon.rssi >= -90 && beacon.minor == 1) {
-          this.beaconEsterno = this.beaconInterno
-          return;
-        }
-
-        if (beacon.minor == 0 && !this.beaconInterno) {
+        if (beacon.rssi >= -90 && beacon.minor == 1 && !this.beaconInterno) {
           this.beaconInterno = beacon
+          return;
+        }
+
+        if (beacon.minor == 0 && !this.beaconEsterno) {
+          this.beaconEsterno = beacon
           this.firebaseService.saveEntryRegion();
         }
 
