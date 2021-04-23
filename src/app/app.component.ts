@@ -27,7 +27,8 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide(); this.globalization.getPreferredLanguage()
+      this.splashScreen.hide();
+      this.globalization.getPreferredLanguage()
         .then(lang => {
           this.alert(JSON.stringify(lang.value))
           this.translateService.use(lang.value.split('-')[0])

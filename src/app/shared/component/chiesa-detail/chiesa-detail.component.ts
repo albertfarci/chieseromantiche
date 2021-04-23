@@ -87,24 +87,15 @@ export class ChiesaDetailComponent {
   ionViewWillEnter() {
 
     this.ngZone.run(() => {
-
-      this.nativeStorage.keys()
+      this.nativeStorage.getItem(this.chiesa[0].id)
         .then(
-          data => this.dataRetrived(data),
+          data => {
+            this.isPrefferedYet = true;
+          },
           error => console.error(error)
         );
     });
   }
-
-  dataRetrived = (data) => {
-
-    data.map(
-      chiesaId => {
-        this.alert((JSON.parse(chiesaId) == this.chiesa.id));
-        if (JSON.parse(chiesaId) == this.chiesa.id) this.isPrefferedYet = true;
-      }
-    )
-  };
 
 
   addToPreferiti() {
@@ -114,6 +105,15 @@ export class ChiesaDetailComponent {
         error => console.error('Error storing item', error)
       );
 
+  }
+
+  openMaps() {
+    var url = '';
+
+    //this will be used for browsers if we ever want to convert to a website
+    url = "http://maps.google.com?q=" + this.chiesa[0].pmdb_metabox_latitude + "," + this.chiesa[0].pmdb_metabox_longitude;
+
+    window.open(url, "_system", 'location=no');
   }
 
   /* toast message */
