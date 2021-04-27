@@ -8,6 +8,7 @@
 </ion-row>
 
 <ion-row [hidden]="!listMapConfiguration?.mapVisible" style="width: 100%; height: 100%;">
-  <app-map [chieseList]="chieseList" [listMapConfiguration]="listMapConfiguration" style="width: 100%; height: 100%;">
+  <app-map [chieseList]="chieseList" [listMapConfiguration]="listMapConfiguration" style="width: 100%; height: 100%;"
+    [currentPosition]="currentPosition">
   </app-map>
 </ion-row>

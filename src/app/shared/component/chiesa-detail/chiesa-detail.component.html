@@ -45,6 +45,11 @@
 
     </ion-item>
 
+    <div class="ion-no-padding">
+      <ion-chip outline color="secondary" *ngFor="let categoria of chiesa[0]?.pmdb_categorie">
+        <ion-label [innerHTML]="categoria | translatePipe">categoria</ion-label>
+      </ion-chip>
+    </div>
 
     <ion-item lines="none">
       <ion-icon color="primary" slot="start" name="text-outline"></ion-icon>

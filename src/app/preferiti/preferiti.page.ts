@@ -20,6 +20,7 @@ export class PreferitiPage {
 
     this.chieseRomaneFiltered = []
     this.ngZone.run(() => {
+
       this.nativeStorage.keys()
         .then(
           data => this.dataRetrived(data),
@@ -35,7 +36,6 @@ export class PreferitiPage {
         this.nativeStorage.getItem(chiesaId)
           .then(
             data => {
-              this.alert(JSON.stringify(data))
               this.chieseRomaneFiltered.push(data)
             },
             error => console.error(error)

@@ -11,6 +11,7 @@ export class HomeContentComponent {
 
   @Input() chieseList;
   @Input() listMapConfiguration: LisMapModel;
+  @Input() currentPosition;
 
   constructor() { }
 

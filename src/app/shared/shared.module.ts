@@ -20,11 +20,15 @@ import { MapComponent } from './component/map/map.component';
 import { NoFoundComponent } from './component/no-found/no-found.component';
 import { FirebaseService } from './services/firebase.service';
 import { Device } from '@ionic-native/device/ngx';
+import { GeoLocationService } from './services/geoLocation.service';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 
 @NgModule({
   declarations: [NoFoundComponent, MapComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
   exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, TranslatePipe, MapComponent, NoFoundComponent],
-  providers: [ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE, FirebaseService, Device]
+  providers: [AndroidPermissions, Geolocation, LocationAccuracy, ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE, FirebaseService, Device, GeoLocationService]
 })
 export class SharedModule { }

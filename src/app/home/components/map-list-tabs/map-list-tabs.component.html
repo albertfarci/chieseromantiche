@@ -1,4 +1,4 @@
-<ion-item class="ion-text-end">
+<ion-item class="ion-text-end" lines="none">
   <ion-col class="ion-text-center" *ngIf="!listMapConfiguration.mapVisible">
     <ion-button fill="outline" (click)="emitTabSelected(ListMapTypes[ListMapTypes.mapVisualization])">
       <ion-icon name="pin-outline"></ion-icon>
@@ -12,6 +12,11 @@
   <ion-col class="ion-text-center" *ngIf="listMapConfiguration.filterVisible">
     <ion-button fill="outline">
       <ion-icon name="filter-outline"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col class="ion-text-center" *ngIf="listMapConfiguration.curretnPositionVisible">
+    <ion-button fill="outline" (click)="currentPosition()">
+      <ion-icon name="locate-outline"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center">

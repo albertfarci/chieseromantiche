@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HomeTemplateSettingsService } from './services/home-template-settings.service';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from './models/list-map-settings.model';
 import { FirebaseService } from '../shared/services/firebase.service';
+import { GeoLocationService } from '../shared/services/geoLocation.service';
 
 @Component({
   selector: 'app-home',
@@ -17,14 +18,19 @@ export class HomePage {
 
   hideFilter: boolean = false;
   listMapSettingsConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
+  currentPosition
 
   constructor(
     private chieseRomaneService: ChieseRomaneService,
     private homeTemplateSettingsService: HomeTemplateSettingsService,
-    private firebaseService: FirebaseService) { }
+    private firebaseService: FirebaseService,
+    public geolocation: GeoLocationService) { }
 
   ngOnInit() {
     this.chieseRomane = this.chieseRomaneService.getAllChiese()
+
+    this.geolocation.getLocationCoordinatesSetup()
+
   }
 
   filterList(evt) {

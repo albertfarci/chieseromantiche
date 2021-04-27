@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Map, LayerGroup } from 'leaflet';
+import { Map, icon, LayerGroup } from 'leaflet';
 import L from 'leaflet'
 import { LisMapModel, ListMapTypes, LIST_MAP_CONFIGURATION } from 'src/app/home/models/list-map-settings.model';
 import { Router } from '@angular/router';
@@ -13,9 +13,23 @@ export class MapComponent implements OnChanges {
 
   @Input() chieseList;
   @Input() listMapConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.mapVisualization);
+  @Input() currentPosition;
 
   private map: Map
   private layerGroup
+
+  icons = {
+    shadowPC: icon({
+      iconUrl: '/assets/icon/Ellipse25.svg',
+      iconSize: [50, 50],
+      popupAnchor: [0, -20]
+    }),
+    pointPC: icon({
+      iconUrl: '/assets/icon/posizioneCorrente.svg',
+      iconSize: [50, 50],
+      popupAnchor: [0, -20]
+    })
+  }
 
   constructor(
     public router: Router) { }
@@ -33,6 +47,13 @@ export class MapComponent implements OnChanges {
       this.layerGroup = new LayerGroup();
 
       this.layerGroup.addTo(this.map);
+
+
+      if (this.currentPosition) {
+
+        L.marker([this.currentPosition.latitudine, this.currentPosition.longitudine], { title: "PC", icon: this.icons.pointPC }).addTo(this.map)
+        L.marker([this.currentPosition.latitudine, this.currentPosition.longitudine], { title: "Shadow", icon: this.icons.shadowPC }).addTo(this.map)
+      }
 
       this.chieseList?.map(
         chiesa => {
@@ -52,6 +73,7 @@ export class MapComponent implements OnChanges {
 
 
     }
+
 
   }
 

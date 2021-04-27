@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from '../../models/list-map-settings.model';
+import { GeoLocationService } from 'src/app/shared/services/geoLocation.service';
 
 @Component({
   selector: 'app-map-list-tabs',
@@ -12,7 +13,9 @@ export class MapListTabsComponent implements OnInit {
   @Input() listMapConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
   @Output() tabSelected = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(
+    public geolocation: GeoLocationService
+  ) { }
 
   ngOnInit() { }
 
@@ -20,6 +23,9 @@ export class MapListTabsComponent implements OnInit {
     this.tabSelected.emit(listMapTypes);
   }
 
+  currentPosition() {
+    this.geolocation.getLocationCoordinatesSetup()
+  }
 
   get ListMapTypes() {
     return ListMapTypes

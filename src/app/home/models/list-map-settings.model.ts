@@ -1,6 +1,7 @@
 export interface LisMapModel {
     listVisible: boolean;
     mapVisible: boolean;
+    curretnPositionVisible: boolean;
     filterVisible: boolean;
     searchBarVisible: boolean;
 }
@@ -16,6 +17,7 @@ export const LIST_MAP_CONFIGURATION = new Map<ListMapTypes, LisMapModel>(
             ListMapTypes.listVisualization, {
                 listVisible: true,
                 mapVisible: false,
+                curretnPositionVisible: false,
                 filterVisible: true,
                 searchBarVisible: true
             }
@@ -24,6 +26,7 @@ export const LIST_MAP_CONFIGURATION = new Map<ListMapTypes, LisMapModel>(
             ListMapTypes.mapVisualization, {
                 listVisible: false,
                 mapVisible: true,
+                curretnPositionVisible: true,
                 filterVisible: false,
                 searchBarVisible: false
             }
