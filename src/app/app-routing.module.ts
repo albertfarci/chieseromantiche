@@ -9,12 +9,17 @@ const routes: Routes = [
   },
   {
     path: 'preferiti',
-    loadChildren: () => import('./preferiti/preferiti.module').then( m => m.PreferitiPageModule)
+    loadChildren: () => import('./preferiti/preferiti.module').then(m => m.PreferitiPageModule)
   },
   {
     path: 'chiesa-detail',
-    loadChildren: () => import('./chiesa-detail/chiesa-detail.module').then( m => m.ChiesaDetailPageModule)
+    loadChildren: () => import('./chiesa-detail/chiesa-detail.module').then(m => m.ChiesaDetailPageModule)
+  },  {
+    path: 'itinerario-item-detail',
+    loadChildren: () => import('./itinerario-item-detail/itinerario-item-detail.module').then( m => m.ItinerarioItemDetailPageModule)
   }
+
+
 ];
 @NgModule({
   imports: [
@@ -22,4 +27,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

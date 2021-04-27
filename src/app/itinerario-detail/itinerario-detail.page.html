@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ 'itinerari' | translatePipe}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        {{ 'itinerari' | translatePipe}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid class="gridMap">
+    <ion-row *ngIf="chieseRomane | async as chieseList; else loading" style="height: 85%;     width: 100%; ">
+      <ion-row style="width: 100%; " [hidden]=" chieseList.length == 0">
+
+        <ion-row style="height: 90%;     width: 100%; ">
+          <app-home-content style="height: 100%;     width: 100%; " *ngIf="chieseList.length > 0 "
+            [chieseList]="chieseList" [listMapConfiguration]="listMapSettingsConfiguration">
+          </app-home-content>
+        </ion-row>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+</ion-content>

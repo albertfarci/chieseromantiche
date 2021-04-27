@@ -18,7 +18,7 @@ export const LIST_MAP_CONFIGURATION = new Map<ListMapTypes, LisMapModel>(
                 listVisible: true,
                 mapVisible: false,
                 curretnPositionVisible: false,
-                filterVisible: true,
+                filterVisible: false,
                 searchBarVisible: true
             }
         ],

@@ -23,7 +23,6 @@ export class HomePage {
   constructor(
     private chieseRomaneService: ChieseRomaneService,
     private homeTemplateSettingsService: HomeTemplateSettingsService,
-    private firebaseService: FirebaseService,
     public geolocation: GeoLocationService) { }
 
   ngOnInit() {

@@ -22,12 +22,19 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
+        path: 'itinerario-detail',
+        loadChildren: () => import('../itinerario-detail/itinerario-detail.module').then(m => m.ItinerarioDetailPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tablinks/home',
         pathMatch: 'full'
       }, {
         path: 'chiesa-detail/:id',
         loadChildren: () => import('../chiesa-detail/chiesa-detail.module').then(m => m.ChiesaDetailPageModule)
+      }, {
+        path: 'itinerario-item-detail/:id',
+        loadChildren: () => import('../itinerario-item-detail/itinerario-item-detail.module').then(m => m.ItinerarioItemDetailPageModule)
       }
     ]
   },

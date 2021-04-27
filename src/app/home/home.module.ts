@@ -9,8 +9,6 @@ import { SharedModule } from '../shared/shared.module';
 import { MapListTabsComponent } from './components/map-list-tabs/map-list-tabs.component';
 import { HomeLoaderComponent } from './components/home-loader/home-loader.component';
 import { ChieseResultNumberComponent } from './components/chiese-result-number/chiese-result-number.component';
-import { HomeContentComponent } from './components/home-content/home-content.component';
-
 
 @NgModule({
   imports: [
@@ -24,8 +22,7 @@ import { HomeContentComponent } from './components/home-content/home-content.com
     HomePage,
     MapListTabsComponent,
     HomeLoaderComponent,
-    ChieseResultNumberComponent,
-    HomeContentComponent
+    ChieseResultNumberComponent
   ]
 })
 export class HomePageModule { }

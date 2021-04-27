@@ -31,9 +31,9 @@ export class AppComponent {
       this.globalization.getPreferredLanguage()
         .then(lang => {
           this.alert(JSON.stringify(lang.value))
-          this.translateService.use(lang.value.split('-')[0])
+          this.translateService.use(lang.value.split('-')[0].toLowerCase())
         })
-        .catch(e => this.translateService.use('it'));
+        .catch(e => this.translateService.use('IT'.toLowerCase()));
 
 
     });

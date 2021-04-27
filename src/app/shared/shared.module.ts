@@ -24,11 +24,13 @@ import { GeoLocationService } from './services/geoLocation.service';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
+import { HomeContentComponent } from '../home/components/home-content/home-content.component';
+import { ItinerarioItemDetailComponent } from './component/itinerario-item-detail/itinerario-item-detail.component';
 
 @NgModule({
-  declarations: [NoFoundComponent, MapComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
+  declarations: [ItinerarioItemDetailComponent, HomeContentComponent, NoFoundComponent, MapComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
-  exports: [SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, TranslatePipe, MapComponent, NoFoundComponent],
+  exports: [TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, ItinerarioItemDetailComponent, HomeContentComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, MapComponent, NoFoundComponent],
   providers: [AndroidPermissions, Geolocation, LocationAccuracy, ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE, FirebaseService, Device, GeoLocationService]
 })
 export class SharedModule { }

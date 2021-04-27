@@ -15,10 +15,37 @@ export class ChieseRomaneService {
     private translateService: TranslateService
   ) { }
 
-  getAllChiese(): Observable<any> {
+  getAllChieseAndIntineraries(): Observable<any> {
     console.log(TranslationModels[this.translateService.currentLang])
 
     return this.httpClient.get("https://www.chieseromanichesardegna.it/wp-json/wp/v2/posts?status=publish&per_page=100");
+  }
+
+  getAllChiese(): Observable<any> {
+
+    console.log(TranslationModels[this.translateService.currentLang])
+
+    return this.getAllChieseAndIntineraries()
+      .pipe(
+        map(result =>
+          result.filter(one => one.pmdb_categorie[0] != 'itinerari')
+        )
+      )
+  }
+
+  getAllItinerari(): Observable<any> {
+    console.log(TranslationModels[this.translateService.currentLang])
+
+    return this.httpClient.get(`../../../assets/itinerari-${this.translateService.currentLang}.json`);
+  };
+
+  geItinerarioById(id): Observable<any> {
+    return this.getAllItinerari()
+      .pipe(
+        map(result =>
+          result.filter(one => one.id == id)
+        )
+      )
   }
 
   getChiesaById(id): Observable<any> {

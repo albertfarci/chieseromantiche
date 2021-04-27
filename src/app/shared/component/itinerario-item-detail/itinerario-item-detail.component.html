@@ -1,0 +1,117 @@
+<ion-card *ngIf="chiesa">
+  <ion-card-header>
+
+    <ion-item lines="none">
+      <ion-card-title class="ion-text-wrap" [innerHTML]="chiesa[0]?.title.rendered"></ion-card-title>
+    </ion-item>
+    <ion-item *ngIf="!virtualTour">
+      <ion-label class="ion-text-wrap">
+        {{ 'inzia-visita-interattiva' | translatePipe}}
+      </ion-label>
+      <ion-button fill="outline" slot="end" [routerLink]="['/tablinks/dashboard']">
+        <ion-icon name="radio-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+  </ion-card-header>
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let foto of chiesa[0]?.pmdb_galleria_foto">
+      <img class="img-chiesa" src="{{foto}}" (click)="showImageFullScren(foto)" />
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card-content>
+
+    <ion-item lines="none">
+      <ion-icon color="primary" slot="start" name="pin-outline"></ion-icon>
+      <ion-label [innerHTML]="chiesa[0]?.pmdb_location_city"></ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon color="primary" slot="start" name="text-outline"></ion-icon>
+      <ion-label>
+        {{ 'narrazione' | translatePipe}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.content.rendered"></ion-label>
+
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon color="primary" slot="start" name="map-outline"></ion-icon>
+      <ion-label>
+        {{ 'chiese' | translatePipe}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item *ngFor="let chiese of chiesa[0]?.chiese" lines="none">
+
+      <ion-button class="ion-text-wrap" fill="outline" slot="start"
+        [routerLink]="['/tablinks/chiesa-detail', chiese.id]" [innerHTML]="chiese?.title.rendered">
+      </ion-button>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-card *ngIf="!chiesa">
+  <div class="ion-padding custom-skeleton">
+    <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    <ion-skeleton-text animated></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+  </div>
+
+
+  <ion-card-header>
+
+    <ion-item lines="none">
+      <ion-card-title class="ion-text-wrap">
+        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </ion-card-title>
+      <ion-icon>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-card-title class="ion-text-wrap">
+        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </ion-card-title>
+      <ion-icon>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </ion-icon>
+    </ion-item>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-item lines="none">
+      <ion-label>
+        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>
+        <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>
+        <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>

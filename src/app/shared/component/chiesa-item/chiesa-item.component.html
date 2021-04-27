@@ -1,4 +1,17 @@
-<ion-card [routerLink]="['/tablinks/chiesa-detail', chiesa.id]">
+<ion-card *ngIf="chiesa.pmdb_categorie[0] != 'itinerari'" [routerLink]="['/tablinks/chiesa-detail', chiesa.id]">
+
+  <img *ngIf="chiesa.pmdb_galleria_foto.length > 0" src="{{chiesa?.pmdb_galleria_foto[0]}}" />
+  <ion-card-header>
+    <ion-card-title [innerHTML]="chiesa?.title.rendered | titleDeleteComa">
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{chiesa?.pmdb_location_city}}
+  </ion-card-content>
+</ion-card>
+
+<ion-card *ngIf="chiesa.pmdb_categorie[0] == 'itinerari'"
+  [routerLink]="['/tablinks/itinerario-item-detail', chiesa.id]">
 
   <img *ngIf="chiesa.pmdb_galleria_foto.length > 0" src="{{chiesa?.pmdb_galleria_foto[0]}}" />
   <ion-card-header>
