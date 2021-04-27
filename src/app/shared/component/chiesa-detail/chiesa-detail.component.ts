@@ -3,6 +3,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
 import { DashboardTemplateService } from 'src/app/dashboard/services/dashboard-template.service';
 import { SLIDES_OPTIONS_CONFIGURATIONS } from '../../models/slideoptions.model';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 @Component({
   selector: 'app-chiesa-detail-component',
   templateUrl: './chiesa-detail.component.html',
@@ -20,7 +21,9 @@ export class ChiesaDetailComponent implements OnChanges {
 
   slideOpts = SLIDES_OPTIONS_CONFIGURATIONS.get('photo-gallery')
 
+
   constructor(
+    private socialSharing: SocialSharing,
     private toast: Toast,
     private nativeStorage: NativeStorage,
     public dashboardTemplateService: DashboardTemplateService) { }
@@ -66,4 +69,21 @@ export class ChiesaDetailComponent implements OnChanges {
     );
   }
 
+  ShareGeneric(parameter) {
+    const url = this.chiesa[0].link
+    const text = this.chiesa[0]?.title.rendered + '\n'
+    this.socialSharing.share(text, 'MEDIUM', null, url)
+  }
+
+  ShareWhatsapp() {
+    this.socialSharing.shareViaWhatsApp(this.chiesa[0]?.title.rendered, this.chiesa[0]?.pmdb_galleria_foto[0], this.chiesa[0].link)
+  }
+
+  ShareFacebook() {
+    this.socialSharing.shareViaWhatsApp(this.chiesa[0]?.title.rendered, this.chiesa[0]?.pmdb_galleria_foto[0], this.chiesa[0].link)
+  }
+
+  SendEmail() {
+    this.socialSharing.shareViaEmail('text', 'subject', ['email@address.com'])
+  }
 }
