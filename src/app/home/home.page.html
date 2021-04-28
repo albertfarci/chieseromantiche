@@ -14,7 +14,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-grid class="gridMap"
-    [ngClass]="listMapSettingsConfiguration.mapVisible ? 'grid-map-visualization ' : 'grid-list-visualization'">
+    [ngClass]="listMapSettingsConfiguration?.mapVisible ? 'grid-map-visualization ' : 'grid-list-visualization'">
     <ion-row style="height: 15%;     width: 100%; ">
       <ion-searchbar showcancelbutton="always" (ionInput)="filterList($event)">
       </ion-searchbar>
@@ -31,7 +31,7 @@
       </ion-row>
       <ion-row style="height: 90%;     width: 100%; ">
         <app-home-content style="height: 100%;     width: 100%; " [chieseList]="chieseRomane"
-          [listMapConfiguration]="listMapSettingsConfiguration" [currentPosition]="geolocation.currentPosition | async">
+          [listMapConfiguration]="listMapSettingsConfiguration" [currentPosition]="currentPosition">
         </app-home-content>
       </ion-row>
 

@@ -17,19 +17,28 @@ export class HomePage {
   chieseRomane;
 
   hideFilter: boolean = false;
-  listMapSettingsConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
+  listMapSettingsConfiguration: LisMapModel
   currentPosition
-
   constructor(
     private chieseRomaneService: ChieseRomaneService,
     private homeTemplateSettingsService: HomeTemplateSettingsService,
     public geolocation: GeoLocationService) { }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
+
+    this.listMapSettingsConfiguration = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
+
     this.chieseRomaneService.getAllChiese().subscribe(
       data => {
         this.chieseRomaneOld = data
         this.chieseRomane = data
+      }
+    )
+
+
+    this.geolocation.currentPosition.subscribe(
+      data => {
+        this.currentPosition = data
       }
     )
 
