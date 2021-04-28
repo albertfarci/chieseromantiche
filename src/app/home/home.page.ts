@@ -4,7 +4,6 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HomeTemplateSettingsService } from './services/home-template-settings.service';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from './models/list-map-settings.model';
-import { FirebaseService } from '../shared/services/firebase.service';
 import { GeoLocationService } from '../shared/services/geoLocation.service';
 
 @Component({
@@ -14,7 +13,8 @@ import { GeoLocationService } from '../shared/services/geoLocation.service';
 })
 export class HomePage {
 
-  chieseRomane: Observable<any>;
+  chieseRomaneOld;
+  chieseRomane;
 
   hideFilter: boolean = false;
   listMapSettingsConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
@@ -25,8 +25,13 @@ export class HomePage {
     private homeTemplateSettingsService: HomeTemplateSettingsService,
     public geolocation: GeoLocationService) { }
 
-  ngOnInit() {
-    this.chieseRomane = this.chieseRomaneService.getAllChiese()
+  ionViewDidEnter() {
+    this.chieseRomaneService.getAllChiese().subscribe(
+      data => {
+        this.chieseRomaneOld = data
+        this.chieseRomane = data
+      }
+    )
 
     this.geolocation.getLocationCoordinatesSetup()
 
@@ -35,14 +40,11 @@ export class HomePage {
   filterList(evt) {
     if (evt.srcElement.value == "") {
       this.hideFilter = false;
-      this.chieseRomane = this.chieseRomaneService.getAllChiese();
+      this.chieseRomane = this.chieseRomaneOld;
     } else {
       this.hideFilter = true;
-      this.chieseRomane = this.chieseRomaneService.getAllChiese().pipe(
-        map(result =>
-          result.filter(one => one.title.rendered.includes(evt.srcElement.value))
-        )
-      )
+      this.chieseRomane = this.chieseRomaneOld
+        .filter(one => one.title.rendered.includes(evt.srcElement.value))
     }
 
   }

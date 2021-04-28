@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 import { Observable } from 'rxjs';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from '../home/models/list-map-settings.model';
@@ -9,19 +9,23 @@ import { HomeTemplateSettingsService } from '../home/services/home-template-sett
   templateUrl: './itinerario-detail.page.html',
   styleUrls: ['./itinerario-detail.page.scss'],
 })
-export class ItinerarioDetailPage implements OnInit {
+export class ItinerarioDetailPage {
 
 
   listMapSettingsConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
 
-  chieseRomane: Observable<any>;
+  chieseRomane;
 
   constructor(
     private chieseRomaneService: ChieseRomaneService,
     private homeTemplateSettingsService: HomeTemplateSettingsService, ) { }
 
-  ngOnInit() {
-    this.chieseRomane = this.chieseRomaneService.getAllItinerari()
+  ionViewDidEnter() {
+    this.chieseRomaneService.getAllItinerari().subscribe(
+      data => {
+        this.chieseRomane = data
+      }
+    )
 
   }
 

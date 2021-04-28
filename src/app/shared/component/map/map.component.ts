@@ -49,6 +49,20 @@ export class MapComponent implements OnChanges {
       this.layerGroup.addTo(this.map);
 
 
+
+
+    }
+
+    if (!!this.map) {
+
+      for (const property in this.map._layers) {
+        if (this.map._layers[property].options && this.map._layers[property].options.title) {
+          if (this.map._layers[property].options.title == "chiesa") {
+            this.map.removeLayer(this.map._layers[property])
+          }
+        }
+      }
+
       if (this.currentPosition) {
 
         L.marker([this.currentPosition.latitudine, this.currentPosition.longitudine], { title: "PC", icon: this.icons.pointPC }).addTo(this.map)
@@ -63,15 +77,13 @@ export class MapComponent implements OnChanges {
 
           }
 
-          L.marker([chiesa.pmdb_metabox_latitude, chiesa.pmdb_metabox_longitude])
+          L.marker([chiesa.pmdb_metabox_latitude, chiesa.pmdb_metabox_longitude], { title: "chiesa" })
             .on('click', (x => {
               this.router.navigate(['/tablinks/chiesa-detail/' + chiesa.id]);
             }))
             .addTo(this.map).openPopup()
         }
       )
-
-
     }
 
 

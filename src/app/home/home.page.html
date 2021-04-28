@@ -19,20 +19,19 @@
       <ion-searchbar showcancelbutton="always" (ionInput)="filterList($event)">
       </ion-searchbar>
     </ion-row>
-    <ion-row *ngIf="chieseRomane | async as chieseList; else loading" style="height: 85%;     width: 100%; ">
-      <ion-row style="width: 100%; " [hidden]=" chieseList.length == 0">
-        <app-map-list-tabs style="height: 100%;     width: 100%; " [chieseList]="chieseList"
+    <ion-row style="height: 85%;     width: 100%; ">
+      <ion-row style="width: 100%; " [hidden]=" chieseRomane?.length == 0">
+        <app-map-list-tabs style="height: 100%;     width: 100%; " [chieseList]="chieseRomane"
           [listMapConfiguration]="listMapSettingsConfiguration" (tabSelected)="getListMapSettings($event)">
         </app-map-list-tabs>
       </ion-row>
-      <ion-row [hidden]="chieseList.length != 0">
+      <ion-row [hidden]="chieseRomane?.length != 0">
         <app-no-found style="height: 100%;     width: 100%; " [phase]="'nessun-risultato-trovato'">
         </app-no-found>
       </ion-row>
       <ion-row style="height: 90%;     width: 100%; ">
-        <app-home-content style="height: 100%;     width: 100%; " *ngIf="chieseList.length > 0 "
-          [chieseList]="chieseList" [listMapConfiguration]="listMapSettingsConfiguration"
-          [currentPosition]="geolocation.currentPosition | async">
+        <app-home-content style="height: 100%;     width: 100%; " [chieseList]="chieseRomane"
+          [listMapConfiguration]="listMapSettingsConfiguration" [currentPosition]="geolocation.currentPosition | async">
         </app-home-content>
       </ion-row>
 
