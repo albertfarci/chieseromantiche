@@ -28,7 +28,6 @@ export class HomePage {
 
     this.listMapSettingsConfiguration = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
 
-    this.chieseRomaneService.getAllChiese().subscribe(
       data => {
         this.chieseRomaneOld = data
         this.chieseRomane = data
