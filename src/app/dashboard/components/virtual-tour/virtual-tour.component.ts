@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 import { Toast } from '@ionic-native/toast/ngx';
 @Component({
   selector: 'app-virtual-tour',

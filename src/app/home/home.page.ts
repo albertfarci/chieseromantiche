@@ -4,8 +4,8 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HomeTemplateSettingsService } from './services/home-template-settings.service';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from './models/list-map-settings.model';
-import { FirebaseService } from '../shared/services/firebase.service';
 import { GeoLocationService } from '../shared/services/geoLocation.service';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -21,14 +21,20 @@ export class HomePage {
   currentPosition
 
   constructor(
+    private platform: Platform,
     private chieseRomaneService: ChieseRomaneService,
     private homeTemplateSettingsService: HomeTemplateSettingsService,
     public geolocation: GeoLocationService) { }
 
-  ngOnInit() {
-    this.chieseRomane = this.chieseRomaneService.getAllChiese()
 
-    this.geolocation.getLocationCoordinatesSetup()
+  ionViewWillEnter(): void {
+    this.platform.ready().then(() => {
+
+      this.chieseRomane = this.chieseRomaneService.getAllChiese()
+
+      this.geolocation.getLocationCoordinatesSetup()
+
+    });
 
   }
 

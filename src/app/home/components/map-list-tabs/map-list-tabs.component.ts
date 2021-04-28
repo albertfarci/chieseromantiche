@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from '../../models/list-map-settings.model';
 import { GeoLocationService } from 'src/app/shared/services/geoLocation.service';
 
@@ -7,7 +7,7 @@ import { GeoLocationService } from 'src/app/shared/services/geoLocation.service'
   templateUrl: './map-list-tabs.component.html',
   styleUrls: ['./map-list-tabs.component.scss'],
 })
-export class MapListTabsComponent implements OnInit {
+export class MapListTabsComponent {
 
   @Input() chieseList;
   @Input() listMapConfiguration: LisMapModel = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
@@ -17,7 +17,6 @@ export class MapListTabsComponent implements OnInit {
     public geolocation: GeoLocationService
   ) { }
 
-  ngOnInit() { }
 
   emitTabSelected(listMapTypes: ListMapTypes) {
     this.tabSelected.emit(listMapTypes);

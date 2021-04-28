@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 
@@ -7,7 +7,7 @@ import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
   templateUrl: './chiesa-detail.page.html',
   styleUrls: ['./chiesa-detail.page.scss'],
 })
-export class ChiesaDetailPage implements OnInit {
+export class ChiesaDetailPage {
 
   chiesa
   showIframe: boolean = true;
@@ -17,7 +17,8 @@ export class ChiesaDetailPage implements OnInit {
     private chieseRomaneService: ChieseRomaneService
   ) { }
 
-  ngOnInit() {
+
+  ionViewDidEnter(): void {
     const id = this.activeRoute.snapshot.paramMap.get('id');
 
     this.chiesa = this.chieseRomaneService.getChiesaById(id);

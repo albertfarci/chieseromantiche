@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 
@@ -7,7 +7,7 @@ import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
   templateUrl: './itinerario-item-detail.page.html',
   styleUrls: ['./itinerario-item-detail.page.scss'],
 })
-export class ItinerarioItemDetailPage implements OnInit {
+export class ItinerarioItemDetailPage {
 
   chiesa
   showIframe: boolean = true;
@@ -17,16 +17,12 @@ export class ItinerarioItemDetailPage implements OnInit {
     private chieseRomaneService: ChieseRomaneService
   ) { }
 
-  ngOnInit() {
-
+  ionViewWillEnter() {
+    this.showIframe = true
     const id = this.activeRoute.snapshot.paramMap.get('id');
 
     console.log(id)
     this.chiesa = this.chieseRomaneService.geItinerarioById(id)
-  }
-
-  ionViewWillEnter() {
-    this.showIframe = true
   }
 
   ionViewDidLeave() {

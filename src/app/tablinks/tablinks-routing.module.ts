@@ -27,7 +27,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tablinks/home',
+        redirectTo: '/tablinks/itinerario-detail',
         pathMatch: 'full'
       }, {
         path: 'chiesa-detail/:id',
@@ -40,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tablinks/home',
+    redirectTo: '/tablinks/itinerario-detail',
     pathMatch: 'full'
   }
 ];
