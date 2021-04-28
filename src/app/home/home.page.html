@@ -13,26 +13,29 @@
         {{ 'chiese' | translatePipe}}</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-grid class="gridMap"
-    [ngClass]="listMapSettingsConfiguration?.mapVisible ? 'grid-map-visualization ' : 'grid-list-visualization'">
+  <ion-grid class="grid-map-visualization">
     <ion-row style="height: 15%;     width: 100%; ">
       <ion-searchbar showcancelbutton="always" (ionInput)="filterList($event)">
       </ion-searchbar>
     </ion-row>
     <ion-row style="height: 85%;     width: 100%; ">
-      <ion-row style="width: 100%; " [hidden]=" chieseRomane?.length == 0">
-        <app-map-list-tabs style="height: 100%;     width: 100%; " [chieseList]="chieseRomane"
-          [listMapConfiguration]="listMapSettingsConfiguration" (tabSelected)="getListMapSettings($event)">
-        </app-map-list-tabs>
+      <ion-row style="width: 100%; height: 100%;" [hidden]="chieseRomane?.length == 0">
+        <ion-row style="height: 10%;     width: 100%; ">
+          <app-map-list-tabs style="height: 100%;     width: 100%; " [chieseList]="chieseRomane"
+            [listMapConfiguration]="listMapSettingsConfiguration" (tabSelected)="getListMapSettings($event)">
+          </app-map-list-tabs>
+        </ion-row>
+
+        <ion-row style="height: 90%;     width: 100%; ">
+          <app-home-content style="height: 100%;     width: 100%; " [chieseList]="chieseRomane"
+            [listMapConfiguration]="listMapSettingsConfiguration" [currentPosition]="currentPosition">
+          </app-home-content>
+        </ion-row>
       </ion-row>
+
       <ion-row [hidden]="chieseRomane?.length != 0">
         <app-no-found style="height: 100%;     width: 100%; " [phase]="'nessun-risultato-trovato'">
         </app-no-found>
-      </ion-row>
-      <ion-row style="height: 90%;     width: 100%; ">
-        <app-home-content style="height: 100%;     width: 100%; " [chieseList]="chieseRomane"
-          [listMapConfiguration]="listMapSettingsConfiguration" [currentPosition]="currentPosition">
-        </app-home-content>
       </ion-row>
 
     </ion-row>

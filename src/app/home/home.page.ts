@@ -24,7 +24,7 @@ export class HomePage {
     private homeTemplateSettingsService: HomeTemplateSettingsService,
     public geolocation: GeoLocationService) { }
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
 
     this.listMapSettingsConfiguration = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
 
