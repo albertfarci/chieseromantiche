@@ -1,10 +1,6 @@
 <ion-row [hidden]="!listMapConfiguration?.listVisible" style="width: 100%;">
   <app-chiese-list [chieseRomane]="chieseList">
   </app-chiese-list>
-
-  <div *ngIf="!chieseList">
-    <app-home-loader></app-home-loader>
-  </div>
 </ion-row>
 
 <ion-row [hidden]="!listMapConfiguration?.mapVisible" style="width: 100%; height: 100%;">
