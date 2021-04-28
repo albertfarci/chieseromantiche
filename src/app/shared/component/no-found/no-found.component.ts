@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 @Component({
   selector: 'app-no-found',
   templateUrl: './no-found.component.html',
