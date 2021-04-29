@@ -57,6 +57,7 @@
     "leaflet": "^1.5.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "y18n": "^5.0.8",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {

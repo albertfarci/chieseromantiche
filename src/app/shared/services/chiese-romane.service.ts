@@ -18,7 +18,7 @@ export class ChieseRomaneService {
   getAllChieseAndIntineraries(): Observable<any> {
     console.log(TranslationModels[this.translateService.currentLang])
 
-    return this.httpClient.get("https://www.chieseromanichesardegna.it/wp-json/wp/v2/posts?status=publish&per_page=100");
+    return this.httpClient.get(`../../../assets/chieseRomane.json`);
   }
 
   getAllChiese(): Observable<any> {
@@ -49,7 +49,7 @@ export class ChieseRomaneService {
   }
 
   getChiesaById(id): Observable<any> {
-    return this.getAllChiese()
+    return this.getAllChieseAndIntineraries()
       .pipe(
         map(result =>
           result.filter(one => one.id == id)
