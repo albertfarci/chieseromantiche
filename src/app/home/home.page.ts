@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
 import { HomeTemplateSettingsService } from './services/home-template-settings.service';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from './models/list-map-settings.model';
 import { GeoLocationService } from '../shared/services/geoLocation.service';
 import { Toast } from '@ionic-native/toast/ngx';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +20,9 @@ export class HomePage {
   hideFilter: boolean = false;
   listMapSettingsConfiguration: LisMapModel
   currentPosition
+
+  destroy$: Subject<boolean>;
+
   constructor(
     private toast: Toast,
     private chieseRomaneService: ChieseRomaneService,
@@ -28,25 +31,31 @@ export class HomePage {
 
   ionViewDidEnter() {
 
+    this.destroy$ = new Subject<boolean>();
+
     this.listMapSettingsConfiguration = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
 
-    this.chieseRomaneService.getAllChieseAndIntineraries().subscribe(
-      data => {
-        this.alert("CHIESER ROMANICHE")
-        this.chieseRomaneOld = data
-        this.chieseRomane = data
-      },
-      error => {
-        this.alert(JSON.stringify(error))
-      }
-    )
+    this.chieseRomaneService.getAllChieseAndIntineraries()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        data => {
+          this.alert("CHIESER ROMANICHE")
+          this.chieseRomaneOld = data
+          this.chieseRomane = data
+        },
+        error => {
+          this.alert(JSON.stringify(error))
+        }
+      )
 
 
-    this.geolocation.currentPosition.subscribe(
-      data => {
-        this.currentPosition = data
-      }
-    )
+    this.geolocation.currentPosition
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        data => {
+          this.currentPosition = data
+        }
+      )
 
     this.geolocation.getLocationCoordinatesSetup()
 
@@ -76,4 +85,11 @@ export class HomePage {
       }
     );
   }
+
+  ionViewDidLeave(): void {
+    console.log("ionViewDidLeave")
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
+  }
+
 }

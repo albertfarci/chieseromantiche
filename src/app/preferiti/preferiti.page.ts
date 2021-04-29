@@ -19,13 +19,14 @@ export class PreferitiPage {
   ionViewDidEnter() {
 
     this.chieseRomaneFiltered = []
+    this.ngZone.run(() => {
 
-    this.nativeStorage.keys()
-      .then(
-        data => this.dataRetrived(data),
-        error => console.error(error)
-      );
-
+      this.nativeStorage.keys()
+        .then(
+          data => this.dataRetrived(data),
+          error => console.error(error)
+        );
+    });
   }
 
   dataRetrived = (data) => {

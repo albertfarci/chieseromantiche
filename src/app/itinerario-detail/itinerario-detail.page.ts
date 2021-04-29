@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from '../home/models/list-map-settings.model';
 import { HomeTemplateSettingsService } from '../home/services/home-template-settings.service';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-itinerario-detail',
@@ -16,21 +17,34 @@ export class ItinerarioDetailPage {
 
   chieseRomane;
 
+  destroy$: Subject<boolean>;
+
   constructor(
     private chieseRomaneService: ChieseRomaneService,
     private homeTemplateSettingsService: HomeTemplateSettingsService, ) { }
 
   ionViewDidEnter() {
-    this.chieseRomaneService.getAllItinerari().subscribe(
-      data => {
-        this.chieseRomane = data
-      }
-    )
+
+    this.destroy$ = new Subject<boolean>();
+
+    this.chieseRomaneService.getAllItinerari()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        data => {
+          this.chieseRomane = data
+        }
+      )
 
   }
 
   getListMapSettings(listMapTypes) {
     this.listMapSettingsConfiguration = this.homeTemplateSettingsService.getListMapSettings(listMapTypes);
+  }
+
+  ionViewDidLeave(): void {
+    console.log("ionViewDidLeave")
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 
 }

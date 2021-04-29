@@ -15,8 +15,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-chiese-list [chieseRomane]="chieseRomaneFiltered"></app-chiese-list>
 
+  <ion-row [hidden]="chieseRomaneFiltered.length == 0">
+    <app-chiese-list [chieseRomane]="chieseRomaneFiltered"></app-chiese-list>
+  </ion-row>
 
   <ion-row [hidden]="chieseRomaneFiltered.length != 0">
     <app-no-found style="height: 100%;     width: 100%; " [phase]="'naviga-chiese-aggiungi-preferiti'"></app-no-found>
