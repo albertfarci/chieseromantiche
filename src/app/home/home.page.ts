@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
-import { map, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { HomeTemplateSettingsService } from './services/home-template-settings.service';
 import { LisMapModel, LIST_MAP_CONFIGURATION, ListMapTypes } from './models/list-map-settings.model';
 import { GeoLocationService } from '../shared/services/geoLocation.service';
@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  @ViewChild('mySearchbar') searchbar;
   chieseRomaneOld;
   chieseRomane;
 
@@ -30,6 +30,8 @@ export class HomePage {
     public geolocation: GeoLocationService) { }
 
   ionViewDidEnter() {
+
+    this.searchbar.value = ""
 
     this.destroy$ = new Subject<boolean>();
 
@@ -68,7 +70,7 @@ export class HomePage {
     } else {
       this.hideFilter = true;
       this.chieseRomane = this.chieseRomaneOld
-        .filter(one => one.title.rendered.includes(evt.srcElement.value))
+        .filter(one => one.title.rendered.toLowerCase().includes(evt.srcElement.value.toLowerCase()))
     }
 
   }

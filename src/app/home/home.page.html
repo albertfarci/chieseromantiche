@@ -15,7 +15,7 @@
   </ion-header>
   <ion-grid class="grid-map-visualization">
     <ion-row style="height: 15%;     width: 100%; ">
-      <ion-searchbar showcancelbutton="always" (ionInput)="filterList($event)">
+      <ion-searchbar #mySearchbar showcancelbutton="always" (ionInput)="filterList($event)">
       </ion-searchbar>
     </ion-row>
     <ion-row style="height: 85%;     width: 100%; ">
