@@ -35,7 +35,7 @@ export class HomePage {
 
     this.listMapSettingsConfiguration = LIST_MAP_CONFIGURATION.get(ListMapTypes.listVisualization);
 
-    this.chieseRomaneService.getAllChieseAndIntineraries()
+    this.chieseRomaneService.getAllChiese()
       .pipe(takeUntil(this.destroy$))
       .subscribe(
         data => {
