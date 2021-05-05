@@ -1,7 +1,8 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
-
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { StorageService } from '../shared/services/storage.service';
+import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 @Component({
   selector: 'app-preferiti',
   templateUrl: './preferiti.page.html',
@@ -11,37 +12,66 @@ export class PreferitiPage {
 
   chieseRomaneFiltered = []
 
+  databaseObj: SQLiteObject;
+  row_data: any = [];
+  readonly database_name: string = "items.db";
+  readonly table_name: string = "chiesa";
+
   constructor(
-    private toast: Toast,
-    private ngZone: NgZone,
-    private nativeStorage: NativeStorage) { }
+    private chieseRomaneService: ChieseRomaneService,
+    private sqlite: SQLite,
+    private toast: Toast) 
+    { }
 
   ionViewDidEnter() {
+    
+    this.sqlite.create({
+      name: this.database_name,
+      location: 'default'
+    })
+      .then((db: SQLiteObject) => {
+        this.databaseObj = db;
+        this.databaseObj.executeSql(`
+      CREATE TABLE IF NOT EXISTS ${this.table_name}  (pid INTEGER PRIMARY KEY, chiesa INTEGER)
+      `, [])
+        .then(() => {
+          this.databaseObj.executeSql(`
+    SELECT * FROM ${this.table_name}
+    `
+      , [])
+      .then((res) => {
 
+        this.row_data = [];
+        if (res.rows.length > 0) {
 
-    this.nativeStorage.keys()
-      .then(
-        data => this.dataRetrived(data),
-        error => console.error(error)
-      );
+          this.dataRetrived(res.rows);
+          
+        }
+      })
+      .catch(e => {
+        alert("error " + JSON.stringify(e))
+      });
+        })
+        .catch(e => {
+          alert("error " + JSON.stringify(e))
+        });
+        })
+        .catch(e => {
+          alert("error " + JSON.stringify(e))
+        });
   }
 
   dataRetrived = (data) => {
+    this.chieseRomaneFiltered=[]
 
-    this.chieseRomaneFiltered = []
-    this.ngZone.run(() => {
-      data.map(
-        chiesaId => {
-          this.nativeStorage.getItem(chiesaId)
-            .then(
-              data => {
-                this.chieseRomaneFiltered.push(data)
-              },
-              error => console.error(error)
-            );
+    for (var i = 0; i < data.length; i++) {
+
+      this.chieseRomaneService.getChiesaById(data.item(i).chiesa).subscribe(
+        data => {
+          this.chieseRomaneFiltered.push(data[0])
         }
       )
-    });
+    }
   };
 
   /* toast message */

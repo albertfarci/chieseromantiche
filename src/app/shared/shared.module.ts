@@ -26,11 +26,13 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { HomeContentComponent } from '../home/components/home-content/home-content.component';
 import { ItinerarioItemDetailComponent } from './component/itinerario-item-detail/itinerario-item-detail.component';
+import { SQLite } from "@ionic-native/sqlite/ngx";
+import { StorageService } from "./services/storage.service";
 
 @NgModule({
   declarations: [ItinerarioItemDetailComponent, HomeContentComponent, NoFoundComponent, MapComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, LoadingComponent],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
   exports: [TitleDeleteComaPipe, TextDeleteSpanPipe, TranslatePipe, ItinerarioItemDetailComponent, HomeContentComponent, SharedComponent, ChiesaItemComponent, ChieseListComponent, ChiesaDetailComponent, LoadingComponent, MapComponent, NoFoundComponent],
-  providers: [AndroidPermissions, Geolocation, LocationAccuracy, ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE, FirebaseService, Device, GeoLocationService]
+  providers: [SQLite ,AndroidPermissions, Geolocation, LocationAccuracy, ChieseRomaneService, NativeStorage, Toast, IBeacon, BluetoothLE, FirebaseService, Device, GeoLocationService, StorageService]
 })
 export class SharedModule { }
