@@ -2,14 +2,14 @@
   <ion-card-header>
 
     <ion-item lines="none">
-      <ion-card-title class="ion-text-wrap" [innerHTML]="chiesa[0]?.title.rendered"></ion-card-title>
+      <ion-card-title class="ion-text-wrap title xx-large" [innerHTML]="chiesa[0]?.title.rendered"></ion-card-title>
     </ion-item>
     <ion-item *ngIf="!virtualTour">
-      <ion-label class="ion-text-wrap">
+      <span class=" ion-text-wrap text larger">
         {{ 'inzia-visita-interattiva' | translatePipe}}
-      </ion-label>
-      <ion-button fill="outline" slot="end" [routerLink]="['/tablinks/dashboard']">
-        <ion-icon name="radio-outline"></ion-icon>
+      </span>
+      <ion-button fill="outline" color="dark" slot="end" [routerLink]="['/tablinks/dashboard']">
+        <ion-icon name="radio-outline" class="title"></ion-icon>
       </ion-button>
     </ion-item>
 
@@ -24,32 +24,32 @@
   <ion-card-content>
 
     <ion-item lines="none">
-      <ion-icon color="primary" slot="start" name="pin-outline"></ion-icon>
-      <ion-label [innerHTML]="chiesa[0]?.pmdb_location_city"></ion-label>
+      <ion-icon class="title"  slot="start" name="pin-outline"></ion-icon>
+      <span class="ion-text-wrap text larger" [innerHTML]="chiesa[0]?.pmdb_location_city"></span>
     </ion-item>
 
     <ion-item lines="none">
-      <ion-icon color="primary" slot="start" name="text-outline"></ion-icon>
-      <ion-label>
+      <ion-icon class="title"  slot="start" name="text-outline"></ion-icon>
+      <span class="ion-text-wrap text larger">
         {{ 'narrazione' | translatePipe}}
-      </ion-label>
+      </span>
     </ion-item>
 
     <ion-item>
-      <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.content.rendered"></ion-label>
+      <span class="ion-text-wrap text larger" class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.content.rendered"></span>
 
     </ion-item>
 
     <ion-item lines="none">
-      <ion-icon color="primary" slot="start" name="map-outline"></ion-icon>
-      <ion-label>
+      <ion-icon class="title" slot="start" name="map-outline"></ion-icon>
+      <span class="ion-text-wrap text larger">
         {{ 'chiese' | translatePipe}}
-      </ion-label>
+      </span>
     </ion-item>
 
     <ion-item *ngFor="let chiese of chiesa[0]?.chiese" lines="none">
 
-      <ion-button class="ion-text-wrap" fill="outline" slot="start"
+      <ion-button class="ion-text-wrap title"  color="dark" fill="outline" slot="start"
         [routerLink]="['/tablinks/chiesa-detail', chiese.id]" [innerHTML]="chiese?.title.rendered">
       </ion-button>
     </ion-item>

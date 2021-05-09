@@ -3,25 +3,25 @@
   <ion-card-header>
 
     <ion-item lines="none">
-      <ion-card-title class="ion-text-wrap" [innerHTML]="chiesa[0]?.title.rendered | titleDeleteComa"></ion-card-title>
-      <ion-button *ngIf="!virtualTour" [hidden]="isPrefferedYet" fill="outline" slot="end" (click)="addToPreferiti()">
-        <ion-icon name="heart-outline"></ion-icon>
+      <ion-card-title class="ion-text-wrap title xx-large" [innerHTML]="chiesa[0]?.title.rendered | titleDeleteComa"></ion-card-title>
+      <ion-button *ngIf="!virtualTour"  color="dark" [hidden]="isPrefferedYet" fill="outline" slot="end" (click)="addToPreferiti()">
+        <ion-icon name="heart-outline" class="title"></ion-icon>
       </ion-button>
     </ion-item>
-    <ion-item *ngIf="!virtualTour">
-      <ion-label class="ion-text-wrap">
+    <ion-item *ngIf="!virtualTour ">
+      <span class=" ion-text-wrap text larger">
         {{ 'inzia-visita-interattiva' | translatePipe}}
-      </ion-label>
-      <ion-button fill="outline" slot="end" [routerLink]="['/tablinks/dashboard']">
-        <ion-icon name="radio-outline"></ion-icon>
-      </ion-button>
+      </span>
+      <ion-button fill="outline" slot="end" color="dark"  [routerLink]="['/tablinks/dashboard']">
+        <ion-icon name="radio-outline" class="title"></ion-icon>
+      </ion-button> 
     </ion-item>
     <ion-item *ngIf="!virtualTour">
-      <ion-label class="ion-text-wrap">
+      <span class=" ion-text-wrap text larger">
         {{ 'indicazioni-stradali' | translatePipe}}
-      </ion-label>
-      <ion-button fill="outline" slot="end" (click)="openMaps()">
-        <ion-icon name="navigate-outline"></ion-icon>
+      </span>
+      <ion-button fill="outline" slot="end" color="dark"  (click)="openMaps()">
+        <ion-icon name="navigate-outline" class="title"></ion-icon>
       </ion-button>
     </ion-item>
 
@@ -35,26 +35,26 @@
   <ion-card-content>
 
     <ion-item lines="none">
-      <ion-icon color="primary" slot="start" name="pin-outline"></ion-icon>
-      <ion-label [innerHTML]="chiesa[0]?.pmdb_location_city"></ion-label>
+      <ion-icon class="title" slot="start" name="pin-outline"></ion-icon>
+      <span class="ion-text-wrap text larger" [innerHTML]="chiesa[0]?.pmdb_location_city"></span>
     </ion-item>
 
     <ion-item>
-      <ion-icon color="primary" slot="start" name="map-outline"></ion-icon>
-      <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.pmdb_location_address"></ion-label>
+      <ion-icon class="title" slot="start" name="map-outline"></ion-icon>
+      <span class="ion-text-wrap text larger" [innerHTML]="chiesa[0]?.pmdb_location_address"></span>
 
     </ion-item>
 
     <ion-item lines="none">
-      <ion-icon color="primary" slot="start" name="text-outline"></ion-icon>
-      <ion-label>
+      <ion-icon class="title" slot="start" name="text-outline"></ion-icon>
+      <span class="ion-text-wrap title larger">
         {{ 'narrazione' | translatePipe}}
-      </ion-label>
+      </span>
     </ion-item>
 
     <ion-item>
-      <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.narrazione">
-      </ion-label>
+      <span class="ion-text-wrap text large" [innerHTML]="chiesa[0]?.narrazione">
+      </span>
     </ion-item>
 
 
@@ -83,10 +83,10 @@
 
     <div *ngIf="virtualTour && interno">
       <ion-item lines="none">
-        <ion-icon color="primary" slot="start" name="film-outline"></ion-icon>
-        <ion-label>
+        <ion-icon class="title" slot="start" name="film-outline"></ion-icon>
+        <span class="ion-text-wrap title x-large">
           {{ 'multimedia' | translatePipe}}
-        </ion-label>
+        </span>
       </ion-item>
 
       <ion-item lines="none" class="ion-margin-top" *ngIf="chiesa[0].audio ">
@@ -105,35 +105,35 @@
 
     <div *ngIf="!virtualTour">
       <ion-item lines="none">
-        <ion-icon color="primary" slot="start" name="film-outline"></ion-icon>
-        <ion-label class="ion-text-wrap" color="primary">
+        <ion-icon slot="start" class="title" name="film-outline"></ion-icon>
+        <span class="ion-text-wrap title larger" color="primary">
           <b>{{ 'istruzioni-sblocco-multimedia' | translatePipe}}</b>
-        </ion-label>
+        </span>
       </ion-item>
       <ion-slides pager="true">
         <ion-slide style="
         width: 50%;">
           <div class="slide">
-            <h2 [routerLink]="['/tablinks/dashboard']">{{ 'scansione' | translatePipe}}</h2>
-            <p><b>{{ 'premi-su-tab-scansione' | translatePipe}}</b></p>
+            <h2 [routerLink]="['/tablinks/dashboard']" class="ion-text-wrap title larger">{{ 'scansione' | translatePipe}}</h2>
+            <p class="ion-text-wrap title larger"><b>{{ 'premi-su-tab-scansione' | translatePipe}}</b></p>
             <img src="../../../../assets/images/slide-1.png" />
           </div>
         </ion-slide>
 
         <ion-slide>
-          <h2>{{ 'attiva-bluetooth' | translatePipe}}</h2>
+          <h2 class="ion-text-wrap title larger">{{ 'attiva-bluetooth' | translatePipe}}</h2>
           <p><b></b></p>
           <img src="../../../../assets/images/slide-2.png" />
         </ion-slide>
 
         <ion-slide>
-          <h2>{{ 'avvicinati-alla-chiesa' | translatePipe}}</h2>
+          <h2 class="ion-text-wrap title larger">{{ 'avvicinati-alla-chiesa' | translatePipe}}</h2>
           <p><b></b></p>
           <img src="../../../../assets/images/slide-3.png" />
         </ion-slide>
 
         <ion-slide>
-          <h2>{{ 'scopri-i-multimedia' | translatePipe}}</h2>
+          <h2 class="ion-text-wrap title larger">{{ 'scopri-i-multimedia' | translatePipe}}</h2>
           <p><b></b></p>
           <img src="../../../../assets/images/slide-4.png" />
         </ion-slide>

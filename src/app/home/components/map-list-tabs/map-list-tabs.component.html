@@ -1,28 +1,28 @@
 <ion-item class="ion-text-end" lines="none">
   <ion-col class="ion-text-center" *ngIf="!listMapConfiguration?.mapVisible">
-    <ion-button fill="outline" (click)="emitTabSelected(ListMapTypes[ListMapTypes.mapVisualization])">
-      <ion-icon name="pin-outline"></ion-icon>
+    <ion-button fill="outline" color="dark"  (click)="emitTabSelected(ListMapTypes[ListMapTypes.mapVisualization])">
+      <ion-icon name="pin-outline" class="title"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="!listMapConfiguration?.listVisible">
-    <ion-button fill="outline" (click)="emitTabSelected(ListMapTypes[ListMapTypes.listVisualization])">
-      <ion-icon name="list-outline"></ion-icon>
+    <ion-button fill="outline" color="dark" (click)="emitTabSelected(ListMapTypes[ListMapTypes.listVisualization])">
+      <ion-icon name="list-outline" class="title"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="listMapConfiguration?.filterVisible">
-    <ion-button fill="outline">
-      <ion-icon name="filter-outline"></ion-icon>
+    <ion-button fill="outline" color="dark">
+      <ion-icon name="filter-outline" class="title"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="listMapConfiguration?.curretnPositionVisible">
-    <ion-button fill="outline" (click)="currentPosition()">
-      <ion-icon name="locate-outline"></ion-icon>
+    <ion-button fill="outline" color="dark" (click)="currentPosition()">
+      <ion-icon name="locate-outline" class="title"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center">
 
-    <ion-label *ngIf="chieseList?.length > 1">{{chieseList?.length}} {{ 'chiese' | translatePipe}}</ion-label>
-    <ion-label *ngIf="chieseList?.length == 1">{{chieseList?.length}} {{ 'chiesa' | translatePipe}}</ion-label>
+    <span class="ion-text-wrap text larger" *ngIf="chieseList?.length > 1">{{chieseList?.length}} {{ 'chiese' | translatePipe}}</span>
+    <span class="ion-text-wrap text larger" *ngIf="chieseList?.length == 1">{{chieseList?.length}} {{ 'chiesa' | translatePipe}}</span>
 
   </ion-col>
 </ion-item>

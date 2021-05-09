@@ -26,6 +26,8 @@ export class VirtualTourComponent implements OnChanges {
       }
 
       if (this.beaconInterno) {
+
+      alert(JSON.stringify(this.beaconInterno))
         this.toast.show('Beacon interno trovato', '5000', 'bottom').subscribe(
           toast => {
             console.log(toast);
@@ -34,12 +36,16 @@ export class VirtualTourComponent implements OnChanges {
       }
 
       if (this.beaconEsterno) {
+
+      alert(JSON.stringify(this.beaconEsterno))
         this.toast.show('Beacon esterno trovato', '5000', 'bottom').subscribe(
           toast => {
             console.log(toast);
           }
         );
       }
+
+      alert(JSON.stringify(this.beaconEsterno))
 
       this.chiesaScanned = this.chieseRomane
         .map(

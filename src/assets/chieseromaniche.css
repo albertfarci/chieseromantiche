@@ -1,0 +1,30 @@
+
+.title {
+    color: #8c0000; 
+    font-family: Playfair Display;
+}
+
+.text {
+    color: #333333; 
+    font-family: Monserrat; 
+}
+
+.xx-large {
+  font-size: xx-large;
+}
+
+.x-large {
+    font-size: x-large;
+}
+
+.larger {
+    font-size: larger;
+}
+
+.large {
+    font-size: large;
+}
+
+.medium {
+    font-size: medium;
+}
