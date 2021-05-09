@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      {{ 'itinerari' | translatePipe}}
+      <span class="title">
+        {{ 'itinerari' | translatePipe}}
+      </span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +12,9 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        {{ 'itinerari' | translatePipe}}</ion-title>
+        <span class="title">
+          {{ 'itinerari' | translatePipe}}
+        </span></ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-grid class="gridMap">

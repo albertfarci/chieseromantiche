@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      {{ 'chiese' | translatePipe}}
+      <span class="title">
+        {{ 'chiese' | translatePipe}}
+      </span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +12,10 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        {{ 'chiese' | translatePipe}}</ion-title>
+        <span class="title">
+          {{ 'chiese' | translatePipe}}
+        </span>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-grid class="grid-map-visualization">
