@@ -61,22 +61,22 @@
     <ion-row class="ion-align-items-center">
       <ion-col size="3" class="ion-align-items-center">
         <ion-button color="light" (click)="ShareGeneric('text')">
-          <ion-icon name="share-social-outline"></ion-icon>
+          <ion-icon name="share-social-outline" class="title"> </ion-icon>
         </ion-button>
       </ion-col>
       <ion-col size="3" class="ion-align-items-center">
-        <ion-button color="warning" (click)="SendEmail()">
-          <ion-icon name="mail-outline"></ion-icon>
+        <ion-button color="light" (click)="SendEmail()">
+          <ion-icon name="mail-outline" class="title"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col size="3" class="ion-align-items-center">
-        <ion-button color="primary" (click)="ShareFacebook()">
-          <ion-icon name="logo-facebook"></ion-icon>
+        <ion-button color="light" (click)="ShareFacebook()">
+          <ion-icon name="logo-facebook" class="title"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col size="3" class="ion-align-items-center">
-        <ion-button color="success" (click)="ShareWhatsapp()">
-          <ion-icon name="logo-whatsapp"></ion-icon>
+        <ion-button color="light" (click)="ShareWhatsapp()">
+          <ion-icon name="logo-whatsapp" class="title"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
@@ -111,6 +111,13 @@
         </span>
       </ion-item>
       <ion-slides pager="true">
+
+        <ion-slide>
+          <span class="ion-text-wrap title larger">{{ 'attiva-bluetooth' | translatePipe}}</span>
+          <p><b></b></p>
+          <img src="../../../../assets/images/slide-2.png" />
+        </ion-slide>
+
         <ion-slide style="
         width: 50%;">
           <div class="slide">
@@ -118,12 +125,6 @@
             <p class="ion-text-wrap title larger"><b>{{ 'premi-su-tab-scansione' | translatePipe}}</b></p>
             <img src="../../../../assets/images/slide-1.png" />
           </div>
-        </ion-slide>
-
-        <ion-slide>
-          <span class="ion-text-wrap title larger">{{ 'attiva-bluetooth' | translatePipe}}</span>
-          <p><b></b></p>
-          <img src="../../../../assets/images/slide-2.png" />
         </ion-slide>
 
         <ion-slide>

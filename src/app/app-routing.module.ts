@@ -17,6 +17,10 @@ const routes: Routes = [
   },  {
     path: 'itinerario-item-detail',
     loadChildren: () => import('./itinerario-item-detail/itinerario-item-detail.module').then( m => m.ItinerarioItemDetailPageModule)
+  },
+  {
+    path: 'progetto',
+    loadChildren: () => import('./progetto/progetto.module').then( m => m.ProgettoPageModule)
   }
 
 

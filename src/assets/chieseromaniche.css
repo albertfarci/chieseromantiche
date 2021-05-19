@@ -28,3 +28,11 @@
 .medium {
     font-size: medium;
 }
+
+.image-progetto{
+    height: 214px !important;
+}
+
+.image-header{
+    height: 30px !important;
+}

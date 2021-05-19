@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
+        path: 'progetto',
+        loadChildren: () => import('../progetto/progetto.module').then(m => m.ProgettoPageModule)
+      },
+      {
         path: 'itinerario-detail',
         loadChildren: () => import('../itinerario-detail/itinerario-detail.module').then(m => m.ItinerarioDetailPageModule)
       },
