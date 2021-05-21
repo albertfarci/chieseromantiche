@@ -1,12 +1,15 @@
 <ion-item class="ion-text-end" lines="none">
   <ion-col class="ion-text-center" *ngIf="!listMapConfiguration?.mapVisible">
     <ion-button fill="outline" color="dark"  (click)="emitTabSelected(ListMapTypes[ListMapTypes.mapVisualization])">
-      <ion-icon name="pin-outline" class="title"></ion-icon>
+      <ion-icon slot="end" name="pin-outline" class="title"> </ion-icon>
+      {{ 'mappa' | translatePipe}}
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="!listMapConfiguration?.listVisible">
+
     <ion-button fill="outline" color="dark" (click)="emitTabSelected(ListMapTypes[ListMapTypes.listVisualization])">
-      <ion-icon name="list-outline" class="title"></ion-icon>
+      {{ 'lista' | translatePipe}}
+      <ion-icon slot="end" name="list-outline" class="title"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="listMapConfiguration?.filterVisible">

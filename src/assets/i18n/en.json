@@ -8,7 +8,9 @@
     "visita-interattiva": "Interactive visit",
     "inzia-visita-interattiva": "Let's start the interactive visit",
     "indicazioni-stradali": "Directions",
+    "lista":"list",
     "narrazione": "Storytelling",
+    "mappa":"maps",
     "multimedia": "Multimedia",
     "itinerari": "Itineraries",
     "istruzioni-sblocco-multimedia": "How to unblock multimedia content?",
@@ -17,5 +19,6 @@
     "avvicinati-alla-chiesa": "Approach the church",
     "scopri-i-multimedia": "Discover multimedia contents",
     "nessun-risultato-trovato": "No result found",
-    "naviga-chiese-aggiungi-preferiti": "Browse the churches section and add to favorites"
+    "naviga-chiese-aggiungi-preferiti": "Browse the churches section and add to favorites",
+    "testo-progetto":"Project contracted by the Municipality of Santa Giusta for the 'Supply of an application for the dissemination of information with Beacon technology - IT applications for the Romanesque Documentation Center and multimedia information system of the Casa dell'Intreccio', as part of the 'Strategic Project Gritaccess Grand Itineraire Thyrrhenien' as part of the Interreg Italy France Maritime 2014-2020 Program"
 }

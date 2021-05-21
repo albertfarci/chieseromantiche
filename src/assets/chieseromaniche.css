@@ -25,6 +25,12 @@
     font-size: large;
 }
 
+p {
+    font-size: large !important;
+    color: #333333; 
+    font-family: Monserrat; 
+}
+
 .medium {
     font-size: medium;
 }
