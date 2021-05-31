@@ -19,7 +19,7 @@ if (environment.production) {
       sessionStorage.setItem('lang', lang.value.split('-')[0].toLowerCase())
     })
     .catch(e => {
-      sessionStorage.setItem('lang', 'en')
+      sessionStorage.setItem('lang', 'it')
     });
 
 

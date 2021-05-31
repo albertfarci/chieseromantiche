@@ -8,15 +8,14 @@
     <ion-item lines="none">
       <ion-icon class="title" slot="start" name="text-outline"></ion-icon>
       <span class="ion-text-wrap title larger">
-        {{ 'descrizione-del-progetto' | translatePipe}}
+        {{ getTranslation('descrizione-del-progetto') | translatePipe}}
       </span>
     </ion-item>
 
     <ion-item>
       <span class="ion-text-wrap text large">
-
         {{
-          'testo-progetto' | translatePipe
+          getTranslation('testo-progetto') | translatePipe
         }}
       </span>
     </ion-item>

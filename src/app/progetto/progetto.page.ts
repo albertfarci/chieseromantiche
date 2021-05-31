@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-progetto',
   templateUrl: './progetto.page.html',
   styleUrls: ['./progetto.page.scss'],
 })
-export class ProgettoPage implements OnInit {
+export class ProgettoPage  {
 
-  constructor() { }
+  
+  constructor(
+    private translateService: TranslateService) {
+}
 
-  ngOnInit() {
+  getTranslation(value){
+    this.translateService.use(sessionStorage.getItem('lang'));
+    return this.translateService.instant(value)
   }
 
 }
+
