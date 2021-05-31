@@ -83,13 +83,11 @@ export class HomePage {
   alert(msg) {
     this.toast.show(msg, '5000', 'center').subscribe(
       toast => {
-        console.log(toast);
       }
     );
   }
 
   ionViewDidLeave(): void {
-    console.log("ionViewDidLeave")
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }

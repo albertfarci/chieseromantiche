@@ -78,7 +78,6 @@ export class PreferitiPage {
   alert(msg) {
     this.toast.show(msg, '5000', 'center').subscribe(
       toast => {
-        console.log(toast);
       }
     );
   }

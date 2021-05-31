@@ -21,7 +21,6 @@ export class ItinerarioItemDetailPage {
 
     const id = this.activeRoute.snapshot.paramMap.get('id');
 
-    console.log(id)
     this.chiesa = this.chieseRomaneService.geItinerarioById(id)
     this.showIframe = true
   }

@@ -60,7 +60,6 @@ export class DashboardBeaconDataService {
   alert(msg: string) {
     this.toast.show(msg, '5000', 'center').subscribe(
       toast => {
-        console.log(toast);
       }
     );
   }

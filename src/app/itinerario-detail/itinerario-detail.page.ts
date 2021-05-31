@@ -42,7 +42,6 @@ export class ItinerarioDetailPage {
   }
 
   ionViewDidLeave(): void {
-    console.log("ionViewDidLeave")
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }

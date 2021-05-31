@@ -16,14 +16,12 @@ export class ChieseRomaneService {
   ) { }
 
   getAllChieseAndIntineraries(): Observable<any> {
-    console.log(TranslationModels[this.translateService.currentLang])
 
     return this.httpClient.get(`../../../assets/chieseRomane-${this.translateService.currentLang}.json`);
   }
 
   getAllChiese(): Observable<any> {
 
-    console.log(TranslationModels[this.translateService.currentLang])
 
     return this.getAllChieseAndIntineraries()
       .pipe(
@@ -34,7 +32,6 @@ export class ChieseRomaneService {
   }
 
   getAllItinerari(): Observable<any> {
-    console.log(TranslationModels[this.translateService.currentLang])
 
     return this.httpClient.get(`../../../assets/itinerari-${this.translateService.currentLang}.json`);
   };

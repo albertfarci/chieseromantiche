@@ -137,8 +137,7 @@ export class GeoLocationService {
 
         this.geolocation.getCurrentPosition({ enableHighAccuracy: true }).then(
             resp => {
-                //this.currentPointsService.setPointA({ latitudine: resp.coords.latitude, longitudine: resp.coords.longitude, title: "Posizione corrente", img: "", abstract: "" })
-                console.log(resp)
+                
                 this.currentPositionSource.next({ latitudine: resp.coords.latitude, longitudine: resp.coords.longitude, title: "Posizione corrente", img: "", abstract: "" })
 
             }

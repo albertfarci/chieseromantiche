@@ -24,7 +24,6 @@ export class FirebaseService {
       .then(
         () => {
 
-          console.log("save")
           this.alert("Region saved")
         }
       )
@@ -40,7 +39,6 @@ export class FirebaseService {
       .then(
         () => {
 
-          console.log("save")
           this.alert("Region saved")
         }
       )
@@ -51,7 +49,6 @@ export class FirebaseService {
   alert(msg: string) {
     this.toast.show(msg, '5000', 'center').subscribe(
       toast => {
-        console.log(toast);
       }
     );
   }

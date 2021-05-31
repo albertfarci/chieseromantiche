@@ -30,7 +30,6 @@ export class VirtualTourComponent implements OnChanges {
       alert(JSON.stringify(this.beaconInterno))
         this.toast.show('Beacon interno trovato', '5000', 'bottom').subscribe(
           toast => {
-            console.log(toast);
           }
         );
       }
@@ -40,7 +39,6 @@ export class VirtualTourComponent implements OnChanges {
       alert(JSON.stringify(this.beaconEsterno))
         this.toast.show('Beacon esterno trovato', '5000', 'bottom').subscribe(
           toast => {
-            console.log(toast);
           }
         );
       }
@@ -92,7 +90,6 @@ export class VirtualTourComponent implements OnChanges {
   alert(msg: string) {
     this.toast.show(msg, '5000', 'center').subscribe(
       toast => {
-        console.log(toast);
       }
     );
   }
