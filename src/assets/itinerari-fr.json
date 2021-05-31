@@ -47,7 +47,7 @@
         "immagine_descrizione": "",
         "virtual_tour": "",
         "video": "",
-        "audio":"https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-dragondef.m4a",
+        "audio": "https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-dragondef.m4a",
         "pmdb_galleria_foto": [
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/07.-Dolianova-Cattedrale-S.-Pantaleo-002.jpg",
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/04\/Serdiana-Chiesa-di-Santa-Maria-di-Sibiola.jpeg",
@@ -129,7 +129,7 @@
         "immagine_descrizione": "",
         "virtual_tour": "",
         "video": "",
-        "audio":"https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-metal.m4a",
+        "audio": "https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-metal.m4a",
         "pmdb_galleria_foto": [
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/39.-Gesico-Chiesa-S.-Maria-006.jpg",
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/20.-Usellus-Chiesa-Romanica-di-Santa-Lucia-005.jpg",
@@ -181,7 +181,7 @@
             "rendered": "Itinerario della Croce"
         },
         "content": {
-            "rendered": "La référence à la croix qui marque cet itinéraire est si éloquente qu’elle ne nécessite aucune explication supplémentaire. Le voyage commence par l’ancienne cathédrale de Santa Giusta (première moitié du XIIe siècle), remarquable pour de nombreuses raisons, par exemple sa technique de construction semblable à celle adoptée sur les chantiers de la cathédrale de Santa Maria à Pise, en Toscane. Nous nous dirigeons ensuite vers Cabras, dans la péninsule du Sinis, pour profiter d’une visite de l’église de San Giovanni. Située le long de la route qui mène au site archéologique de la ville de Tharros, elle a été construite  à l’époque byzantine (6e-7e siècle) et agrandie au début de la période romane (11e siècle). Notre itinéraire nous mène ensuite à l’église de San Lussorio à Fordongiànus (fin du 11e – début du 12e siècle), caractérisée par l’utilisation d’une pierre volcanique rougeâtre locale. Nous nous rendons ensuite à Solarussa, pour admirer la beauté essentielle de l’église de San Gregorio Magno. C’est maintenant au tour de l’église de Santa Sofia à San Vero Milis, qui nous attend pour nous raconter l’histoire de sa construction, ample et articulée. L’arrêt suivant est l’église de Milis dédiée à San Paolo, avec une façade spectaculaire construite en opus bìchrome, faisant alterner des rangées de calcaire et de basalte. C’est maintenant le tour de l’église de San Leonardo di Siete Fuentes à Santu Lussurgiu, dont le nom exprime déjà son lien profond avec les sources présentes dans la région. Allons ensuite admirer l’église de San Pietro di Zuri à Ghilarza, témoignage d’une audacieuse opération de sauvetage : dans les années 1920, l’église et tout le village, qui se trouvait sur les rives du Tirso, ont été déplacés plus en amont pour éviter d’être submergés suite à la création du bassin artificiel du lac Omodeo. Nous terminons notre voyage par une visite de l’église de San Pietro à Bidonì, un exemple significatif du style roman dit “mineur”.", 
+            "rendered": "La référence à la croix qui marque cet itinéraire est si éloquente qu’elle ne nécessite aucune explication supplémentaire. Le voyage commence par l’ancienne cathédrale de Santa Giusta (première moitié du XIIe siècle), remarquable pour de nombreuses raisons, par exemple sa technique de construction semblable à celle adoptée sur les chantiers de la cathédrale de Santa Maria à Pise, en Toscane. Nous nous dirigeons ensuite vers Cabras, dans la péninsule du Sinis, pour profiter d’une visite de l’église de San Giovanni. Située le long de la route qui mène au site archéologique de la ville de Tharros, elle a été construite  à l’époque byzantine (6e-7e siècle) et agrandie au début de la période romane (11e siècle). Notre itinéraire nous mène ensuite à l’église de San Lussorio à Fordongiànus (fin du 11e – début du 12e siècle), caractérisée par l’utilisation d’une pierre volcanique rougeâtre locale. Nous nous rendons ensuite à Solarussa, pour admirer la beauté essentielle de l’église de San Gregorio Magno. C’est maintenant au tour de l’église de Santa Sofia à San Vero Milis, qui nous attend pour nous raconter l’histoire de sa construction, ample et articulée. L’arrêt suivant est l’église de Milis dédiée à San Paolo, avec une façade spectaculaire construite en opus bìchrome, faisant alterner des rangées de calcaire et de basalte. C’est maintenant le tour de l’église de San Leonardo di Siete Fuentes à Santu Lussurgiu, dont le nom exprime déjà son lien profond avec les sources présentes dans la région. Allons ensuite admirer l’église de San Pietro di Zuri à Ghilarza, témoignage d’une audacieuse opération de sauvetage : dans les années 1920, l’église et tout le village, qui se trouvait sur les rives du Tirso, ont été déplacés plus en amont pour éviter d’être submergés suite à la création du bassin artificiel du lac Omodeo. Nous terminons notre voyage par une visite de l’église de San Pietro à Bidonì, un exemple significatif du style roman dit “mineur”.",
             "protected": false
         },
         "author": 1,
@@ -212,7 +212,7 @@
         "immagine_descrizione": "",
         "virtual_tour": "",
         "video": "",
-        "audio":"https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-croix.m4a",
+        "audio": "https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-croix.m4a",
         "pmdb_galleria_foto": [
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/18.-Santa-Giusta-Basilica-Santa-Giusta-001-2.jpg",
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/04\/26.-Cabras-Chiesa-di-San-Giovanni-di-Sinis-006.jpg",
@@ -273,95 +273,6 @@
                 "id": 1740,
                 "title": {
                     "rendered": "Bidon\u00ec, Chiesa di San Pietro"
-                }
-            }
-        ]
-    },
-    {
-        "id": 3086,
-        "date": "2021-04-19T13:22:41",
-        "date_gmt": "2021-04-19T13:22:41",
-        "guid": {
-            "rendered": "https:\/\/www.chieseromanichesardegna.it\/?p=3086"
-        },
-        "modified": "2021-04-20T06:53:37",
-        "modified_gmt": "2021-04-20T06:53:37",
-        "slug": "itinerario-delle-reliquie",
-        "status": "publish",
-        "type": "post",
-        "link": "https:\/\/www.chieseromanichesardegna.it\/itinerario-delle-reliquie\/",
-        "title": {
-            "rendered": "Itinerario delle Reliquie"
-        },
-        "content": {
-            "rendered": "<p>Il nome scelto per designare questo itinerario richiama all&rsquo;attenzione il tema della ricerca delle <a aria-describedby=\"tt\" href=\"https:\/\/www.chieseromanichesardegna.it\/glossary\/reliquie\/\" class=\"glossaryLink\" data-cmtooltip=\"&lt;div class=glossaryItemTitle&gt;Reliquie&lt;\/div&gt;&lt;div class=glossaryItemBody&gt;Resti fisici o oggetti appartenuti ad un Santo sottoposti a venerazione.&lt;\/div&gt;&lt;div class=glossaryTooltipMoreLinkWrapper&gt;&lt;a class=glossaryTooltipMoreLink href=https:\/\/www.chieseromanichesardegna.it\/glossary\/reliquie\/ &gt;Leggi tutto&lt;\/a&gt;&lt;\/div&gt;\">reliquie<\/a>, che tanto ha segnato la storia medievale.<\/p>\n<p>Non &egrave; quindi per caso che il nostro viaggio prenda avvio con la chiesa di Santa Lucia a Usellus (XII-XIII secolo), che conserva al suo interno una vaschetta in pietra, forse riconducibile ad un reliquiario medievale.<\/p>\n<p>La successiva tappa &egrave; la chiesa di San Gregorio a Sardara, databile al Trecento e caratterizzata da una raffinata tecnica edilizia.<\/p>\n<p>Ci rechiamo quindi a Villamar, dove ci attende la chiesa di San Pietro, inquadrabile cronologicamente anch&rsquo;essa al XIII secolo.<\/p>\n<p>Chiudiamo in nostro viaggio con la visita alla chiesa di Santa Maria a Gesico, che grazie ad un&rsquo;<a aria-describedby=\"tt\" href=\"https:\/\/www.chieseromanichesardegna.it\/glossary\/epigrafe\/\" class=\"glossaryLink\" data-cmtooltip=\"&lt;div class=glossaryItemTitle&gt;Epigrafe&lt;\/div&gt;&lt;div class=glossaryItemBody&gt;Iscrizione commemorativa completa o frammentaria incisa nella pietra, nei metalli e nei manufatti realizzati in diversi materiali.&lt;\/div&gt;&lt;div class=glossaryTooltipMoreLinkWrapper&gt;&lt;a class=glossaryTooltipMoreLink href=https:\/\/www.chieseromanichesardegna.it\/glossary\/epigrafe\/ &gt;Leggi tutto&lt;\/a&gt;&lt;\/div&gt;\">epigrafe<\/a> possiamo datare al 1305.<\/p>\n",
-            "protected": false
-        },
-        "author": 1,
-        "featured_media": 1641,
-        "comment_status": "closed",
-        "ping_status": "closed",
-        "sticky": false,
-        "template": "",
-        "format": "standard",
-        "meta": {
-            "_et_pb_use_builder": "",
-            "_et_pb_old_content": "",
-            "_et_gb_content_width": "",
-            "spay_email": ""
-        },
-        "categories": [
-            34
-        ],
-        "tags": [],
-        "pmdb_categorie": [
-            "itinerari"
-        ],
-        "pmdb_location_address": "",
-        "pmdb_location_city": "da Usellus a Gesico",
-        "pmdb_metabox_latitude": "",
-        "pmdb_metabox_longitude": "",
-        "narrazione": "",
-        "immagine_descrizione": "",
-        "virtual_tour": "",
-        "video": "",
-        "audio": "https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-croix.m4a",
-        "pmdb_galleria_foto": [
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/39.-Gesico-Chiesa-S.-Maria-006.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/20.-Usellus-Chiesa-Romanica-di-Santa-Lucia-005.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/43.-Masullas-Chiesa-Romanica-S-Leonardo-005.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/04\/59.-Sardara-Chiesa-di-San-Gregorio-002.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/54.-Villamar-Chiesa-S.-Pietro-001.jpg"
-        ],
-        "chiese": [
-            {
-                "id": 1721,
-                "title": {
-                    "rendered": "Usellus, chiesa di Santa Lucia"
-                }
-            },
-            {
-                "id": 1733,
-                "title": {
-                    "rendered": "Masullas, chiesa di S. Leonardo"
-                }
-            },
-            {
-                "id": 1978,
-                "title": {
-                    "rendered": "Sardara, Chiesa di San Gregorio"
-                }
-            },
-            {
-                "id": 1670,
-                "title": {
-                    "rendered": "Villamar, Chiesa di San Pietro"
-                }
-            },
-            {
-                "id": 1639,
-                "title": {
-                    "rendered": "Gesico, Chiesa di Santa Maria d\u2019 Itria"
                 }
             }
         ]
