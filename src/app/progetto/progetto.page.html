@@ -1,62 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      <span class="title">
-
-        {{ 'progetto' | translatePipe}}
-      </span>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
 
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">
-        <span class="title">
-
-          {{ 'progetto' | translatePipe}}
-        </span>
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-card >
+  <ion-card>
 
     <ion-card-header>
 
 
-    <ion-item lines="none">
-      <ion-icon class="title" slot="start" name="text-outline"></ion-icon>
-      <span class="ion-text-wrap title larger">
-        {{ 'descrizione-del-progetto' | translatePipe}}
-      </span>
-    </ion-item>
+      <ion-item lines="none">
+        <!--<span class="ion-text-wrap title x-large">
+          {{ 'descrizione-del-progetto' | translatePipe}}
+        </span>
+      -->
+        <img src="../../../../assets/images/logo.png" />
+      </ion-item>
 
-    <ion-item>
-      <span class="ion-text-wrap text large">
-        Progetto appaltato dal Comune di Santa Giusta per la “Fornitura di un'applicazione per la diffusione di informazione con tecnologia Beacon - Applicazioni informatiche per il Centro di Documentazione del Romanico e Sistema informativo multimediale della Casa dell’Intreccio”, nell'ambito del "Progetto Strategico Gritaccess Grand Itineraire Thyrrhenien nell'ambito del Programma Interreg Italia Francia Marittimo 2014 -2020".
-      </span>
-    </ion-item>
+      <ion-item class="ion-padding-top" lines="none">
+        <span class="ion-text-wrap text large">
+          Progetto appaltato dal Comune di Santa Giusta per la “Fornitura di un'applicazione per la diffusione di
+          informazione con tecnologia Beacon - Applicazioni informatiche per il Centro di Documentazione del Romanico e
+          Sistema informativo multimediale della Casa dell’Intreccio”, nell'ambito del "Progetto Strategico Gritaccess
+          Grand Itineraire Thyrrhenien nell'ambito del Programma Interreg Italia Francia Marittimo 2014 -2020".
+        </span>
+      </ion-item>
 
     </ion-card-header>
 
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="6" class="ion-text-center">
 
-      <img class="image-progetto" src="../../../../assets/images/logo_santagiusta.png" />
+        <img class="image-progetto" src="../../../../assets/images/logo_santagiusta.png" />
       </ion-col>
 
-      <ion-col size="6">
+      <ion-col size="6" class="ion-text-center">
 
-      <img class="image-progetto" src="../../../../assets/images/centrato2righe.png" />
+        <img class="image-progetto" src="../../../../assets/images/centrato2righe.png" />
       </ion-col>
 
     </ion-row>
 
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button fill="outline" color="dark" [routerLink]="['/tablinks/home']">
+          <ion-icon name="arrow-forward-outline" class="title"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
 
   </ion-card>
-  
+
 
 </ion-content>

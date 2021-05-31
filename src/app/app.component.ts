@@ -28,13 +28,6 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.globalization.getPreferredLanguage()
-        .then(lang => {
-          this.alert(JSON.stringify(lang.value))
-          this.translateService.use(lang.value.split('-')[0].toLowerCase())
-        })
-        .catch(e => this.translateService.use('EN'.toLowerCase()));
-
 
     });
 
