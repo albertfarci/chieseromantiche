@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'tablinks',
     loadChildren: () => import('./tablinks/tablinks.module').then(m => m.TablinksPageModule)
   },
   {
@@ -14,13 +14,14 @@ const routes: Routes = [
   {
     path: 'chiesa-detail',
     loadChildren: () => import('./chiesa-detail/chiesa-detail.module').then(m => m.ChiesaDetailPageModule)
-  },  {
-    path: 'itinerario-item-detail',
-    loadChildren: () => import('./itinerario-item-detail/itinerario-item-detail.module').then( m => m.ItinerarioItemDetailPageModule)
   },
   {
-    path: 'progetto',
-    loadChildren: () => import('./progetto/progetto.module').then( m => m.ProgettoPageModule)
+    path: 'itinerario-item-detail',
+    loadChildren: () => import('./itinerario-item-detail/itinerario-item-detail.module').then(m => m.ItinerarioItemDetailPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./progetto/progetto.module').then(m => m.ProgettoPageModule)
   }
 
 
