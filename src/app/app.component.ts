@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { TranslateService } from '@ngx-translate/core';
 import { Globalization } from '@ionic-native/globalization/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -28,12 +29,20 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.globalization.getPreferredLanguage()
+      .then(lang => {
+        this.alert(JSON.stringify(lang.value))
+        this.translateService.use(lang.value.split('-')[0].toLowerCase())
+      })
+      .catch(e => this.translateService.use('fr'.toLowerCase()));
 
     });
 
     this.platform.backButton.subscribe(
       () => {
-        navigator['app'].exitApp();
+        if(window.location.pathname.includes('/tabs')){
+          navigator['app'].exitApp();
+        }
       }
     )
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 
@@ -11,6 +11,9 @@ export class ItinerarioItemDetailPage {
 
   chiesa
   showIframe: boolean = true;
+  stopAudio = false;
+
+  @ViewChild('source') multimedia
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -25,7 +28,11 @@ export class ItinerarioItemDetailPage {
     this.showIframe = true
   }
 
-  ionViewDidLeave() {
+  ionViewWillLeave() {
+    console.log('leave')
+    console.log(this.multimedia)
+
+    this.stopAudio = true;
     this.showIframe = false
   }
 }
