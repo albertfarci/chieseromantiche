@@ -41,12 +41,10 @@ export class HomePage {
       .pipe(takeUntil(this.destroy$))
       .subscribe(
         data => {
-          this.alert("CHIESER ROMANICHE")
           this.chieseRomaneOld = data
           this.chieseRomane = data
         },
         error => {
-          this.alert(JSON.stringify(error))
         }
       )
 

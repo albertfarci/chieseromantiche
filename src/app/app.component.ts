@@ -31,7 +31,6 @@ export class AppComponent {
       this.splashScreen.hide();
       this.globalization.getPreferredLanguage()
       .then(lang => {
-        this.alert(JSON.stringify(lang.value))
         this.translateService.use(lang.value.split('-')[0].toLowerCase())
         sessionStorage.setItem('lang', lang.value.split('-')[0].toLowerCase())
       })

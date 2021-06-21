@@ -60,7 +60,6 @@ export class DashboardPage {
   }
 
   stopRangingBeaconsInRegion() {
-    this.alert('stopRangingBeaconsInRegion ')
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }

@@ -41,9 +41,6 @@ export class DashboardBeaconDataService {
 
     this.beaconRegion = this.ibeacon.BeaconRegion('deskBeacon', '476C6F62-616C-2D54-6167-000000000000');
 
-    this.alert(`Scanning has started`);
-
-
     this.ibeacon.startRangingBeaconsInRegion(this.beaconRegion).then(
       (data) => {
 

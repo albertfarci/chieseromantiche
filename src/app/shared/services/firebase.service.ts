@@ -23,8 +23,6 @@ export class FirebaseService {
       })
       .then(
         () => {
-
-          this.alert("Region saved")
         }
       )
   }
@@ -39,7 +37,6 @@ export class FirebaseService {
       .then(
         () => {
 
-          this.alert("Region saved")
         }
       )
   }
