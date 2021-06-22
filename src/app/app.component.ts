@@ -35,7 +35,7 @@ export class AppComponent {
         sessionStorage.setItem('lang', lang.value.split('-')[0].toLowerCase())
       })
       .catch(e => {
-        sessionStorage.setItem('lang', 'it')
+        sessionStorage.setItem('lang', 'en')
       })
 
     });

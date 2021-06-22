@@ -82,7 +82,7 @@
         ]
     },
     {
-        "id": 3086,
+        "id": 3039,
         "date": "2021-04-19T13:22:41",
         "date_gmt": "2021-04-19T13:22:41",
         "guid": {
@@ -90,7 +90,7 @@
         },
         "modified": "2021-04-20T06:53:37",
         "modified_gmt": "2021-04-20T06:53:37",
-        "slug": "itinerario-delle-reliquie",
+        "slug": "itinerario-del-metallo",
         "status": "publish",
         "type": "post",
         "link": "https:\/\/www.chieseromanichesardegna.it\/itinerario-delle-reliquie\/",
@@ -102,7 +102,7 @@
             "protected": false
         },
         "author": 1,
-        "featured_media": 1641,
+        "featured_media": 957,
         "comment_status": "closed",
         "ping_status": "closed",
         "sticky": false,
@@ -129,13 +129,12 @@
         "immagine_descrizione": "",
         "virtual_tour": "",
         "video": "",
-        "audio": "https://www.chieseromanichesardegna.it/en/wp-content/uploads/2021/04/3-Itinerary-of-the-Relics_ENG.m4a",
+        "audio": "https://www.chieseromanichesardegna.it/en/wp-content/uploads/2021/04/1-Itinerary-of-the-Metal_ENG.m4a",
         "pmdb_galleria_foto": [
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/39.-Gesico-Chiesa-S.-Maria-006.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/20.-Usellus-Chiesa-Romanica-di-Santa-Lucia-005.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/43.-Masullas-Chiesa-Romanica-S-Leonardo-005.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/04\/59.-Sardara-Chiesa-di-San-Gregorio-002.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/54.-Villamar-Chiesa-S.-Pietro-001.jpg"
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/06.-Uta-Chiesa-Santa-Maria-002-1024x683-1.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/05.-Villaspeciosa-Chiesa-S.-Platano.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/04.-Villamassargia-Chiesa-Romanica-S.-Ranieri-001.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/01.-Tratalias-Chiesa-di-Santa-Maria-di-Moneserrato-005.jpg"
         ],
         "chiese": [
             {
@@ -325,7 +324,7 @@
         "immagine_descrizione": "",
         "virtual_tour": "",
         "video": "",
-        "audio": "https://www.chieseromanichesardegna.it/en/wp-content/uploads/2021/04/1-Itinerary-of-the-Metal_ENG.m4a",
+        "audio": "https://www.chieseromanichesardegna.it/en/wp-content/uploads/2021/04/3-Itinerary-of-the-Relics_ENG.m4a",
         "pmdb_galleria_foto": [
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/39.-Gesico-Chiesa-S.-Maria-006.jpg",
             "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/20.-Usellus-Chiesa-Romanica-di-Santa-Lucia-005.jpg",

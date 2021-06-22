@@ -82,7 +82,7 @@
         ]
     },
     {
-        "id": 3086,
+        "id": 3039,
         "date": "2021-04-19T13:22:41",
         "date_gmt": "2021-04-19T13:22:41",
         "guid": {
@@ -90,7 +90,7 @@
         },
         "modified": "2021-04-20T06:53:37",
         "modified_gmt": "2021-04-20T06:53:37",
-        "slug": "itinerario-delle-reliquie",
+        "slug": "itinerario-del-metallo",
         "status": "publish",
         "type": "post",
         "link": "https:\/\/www.chieseromanichesardegna.it\/itinerario-delle-reliquie\/",
@@ -102,7 +102,7 @@
             "protected": false
         },
         "author": 1,
-        "featured_media": 1641,
+        "featured_media": 957,
         "comment_status": "closed",
         "ping_status": "closed",
         "sticky": false,
@@ -131,11 +131,10 @@
         "video": "",
         "audio": "https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-metal.m4a",
         "pmdb_galleria_foto": [
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/39.-Gesico-Chiesa-S.-Maria-006.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/20.-Usellus-Chiesa-Romanica-di-Santa-Lucia-005.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/43.-Masullas-Chiesa-Romanica-S-Leonardo-005.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/04\/59.-Sardara-Chiesa-di-San-Gregorio-002.jpg",
-            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/54.-Villamar-Chiesa-S.-Pietro-001.jpg"
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/06.-Uta-Chiesa-Santa-Maria-002-1024x683-1.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/05.-Villaspeciosa-Chiesa-S.-Platano.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/04.-Villamassargia-Chiesa-Romanica-S.-Ranieri-001.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/02\/01.-Tratalias-Chiesa-di-Santa-Maria-di-Moneserrato-005.jpg"
         ],
         "chiese": [
             {
@@ -273,6 +272,88 @@
                 "id": 1740,
                 "title": {
                     "rendered": "Bidon\u00ec, Chiesa di San Pietro"
+                }
+            }
+        ]
+    },{
+        "id": 3086,
+        "date": "2021-04-19T13:22:41",
+        "date_gmt": "2021-04-19T13:22:41",
+        "guid": {
+            "rendered": "https:\/\/www.chieseromanichesardegna.it\/?p=3086"
+        },
+        "modified": "2021-04-20T06:53:37",
+        "modified_gmt": "2021-04-20T06:53:37",
+        "slug": "itinerario-delle-reliquie",
+        "status": "publish",
+        "type": "post",
+        "link": "https:\/\/www.chieseromanichesardegna.it\/itinerario-delle-reliquie\/",
+        "title": {
+            "rendered": "Itinéraire des reliques"
+        },
+        "content": {
+            "rendered": "Le nom choisi pour désigner cet itinéraire attire l’attention sur le thème de la recherche de reliques, qui a tant marqué l’histoire médiévale. Ce n’est donc pas un hasard si notre voyage commence par l’église de Santa Lucia à Usellus (XIIe-XIIIe siècle), qui abrite un médaillon en pierre, peut-être lié à un reliquaire médiéval. L’étape suivante est l’église de San Gregorio à Sardara, datant du 14ème siècle et caractérisée par une technique de construction raffinée. Rendons-nous ensuite à Villamar, où nous attend l’église de San Pietro, qui date également du XIIIe siècle. Nous terminerons notre voyage par une visite de l’église de Santa Maria à Gesico, que nous pouvons dater de 1305 grâce à une épigraphe. ",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 1641,
+        "comment_status": "closed",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta": {
+            "_et_pb_use_builder": "",
+            "_et_pb_old_content": "",
+            "_et_gb_content_width": "",
+            "spay_email": ""
+        },
+        "categories": [
+            34
+        ],
+        "tags": [],
+        "pmdb_categorie": [
+            "itinerari"
+        ],
+        "pmdb_location_address": "",
+        "pmdb_location_city": "de Usellus à Gesico",
+        "pmdb_metabox_latitude": "",
+        "pmdb_metabox_longitude": "",
+        "narrazione": "",
+        "immagine_descrizione": "",
+        "virtual_tour": "",
+        "video": "",
+        "audio": "https://www.chieseromanichesardegna.it/fr/wp-content/uploads/2021/04/itineraire-reliques.m4a",
+        "pmdb_galleria_foto": [
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/39.-Gesico-Chiesa-S.-Maria-006.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/20.-Usellus-Chiesa-Romanica-di-Santa-Lucia-005.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/43.-Masullas-Chiesa-Romanica-S-Leonardo-005.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/04\/59.-Sardara-Chiesa-di-San-Gregorio-002.jpg",
+            "https:\/\/www.chieseromanichesardegna.it\/wp-content\/uploads\/2021\/03\/54.-Villamar-Chiesa-S.-Pietro-001.jpg"
+        ],
+        "chiese": [
+            {
+                "id": 1721,
+                "title": {
+                    "rendered": "Usellus, chiesa di Santa Lucia"
+                }
+            },
+            {
+                "id": 1978,
+                "title": {
+                    "rendered": "Sardara, Chiesa di San Gregorio"
+                }
+            },
+            {
+                "id": 1670,
+                "title": {
+                    "rendered": "Villamar, Chiesa di San Pietro"
+                }
+            },
+            {
+                "id": 1639,
+                "title": {
+                    "rendered": "Gesico, Chiesa di Santa Maria d\u2019 Itria"
                 }
             }
         ]
