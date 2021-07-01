@@ -25,26 +25,6 @@ export class VirtualTourComponent implements OnChanges {
         this.stopRangingBeaconsInRegion.emit()
       }
 
-      if (this.beaconInterno) {
-
-      alert(JSON.stringify(this.beaconInterno))
-        this.toast.show('Beacon interno trovato', '5000', 'bottom').subscribe(
-          toast => {
-          }
-        );
-      }
-
-      if (this.beaconEsterno) {
-
-      alert(JSON.stringify(this.beaconEsterno))
-        this.toast.show('Beacon esterno trovato', '5000', 'bottom').subscribe(
-          toast => {
-          }
-        );
-      }
-
-      alert(JSON.stringify(this.beaconEsterno))
-
       this.chiesaScanned = this.chieseRomane
         .map(
           chiesa => {
