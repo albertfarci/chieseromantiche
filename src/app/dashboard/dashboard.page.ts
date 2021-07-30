@@ -39,7 +39,14 @@ export class DashboardPage {
 
     this.dashboardBeaconDataService.setUpBeacon()
 
-    this.chieseRomane = this.chieseRomaneService.getAllChiese()
+    this.chieseRomaneService.getAllChiese().pipe(takeUntil(this.destroy$))
+    .subscribe(
+      data => {
+        this.chieseRomane = data
+      },
+      error => {
+      }
+    )
 
     this.dashboardBeaconDataService.didRangeBeaconsInRegion()
       .pipe(takeUntil(this.destroy$))
@@ -57,6 +64,9 @@ export class DashboardPage {
 
   ionViewDidLeave(): void {
     this.stopRangingBeaconsInRegion()
+
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 
   stopRangingBeaconsInRegion() {
