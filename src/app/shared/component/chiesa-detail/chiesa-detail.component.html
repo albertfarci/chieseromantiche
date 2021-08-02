@@ -3,7 +3,7 @@
   <ion-card-header>
 
     <ion-item lines="none">
-      <ion-card-title class="ion-text-wrap title xx-large" [innerHTML]="chiesa[0]?.title.rendered | titleDeleteComa"></ion-card-title>
+      <ion-card-title class="ion-text-wrap title xx-large" [innerHTML]="chiesa[0]?.title?.rendered | titleDeleteComa"></ion-card-title>
       <ion-button *ngIf="!virtualTour"  color="dark" [hidden]="isPrefferedYet" fill="outline" slot="end" (click)="addToPreferiti()">
         <ion-icon name="heart-outline" class="title"></ion-icon>
       </ion-button>
@@ -142,7 +142,7 @@
       </ion-slides>
     </div>
 
-    <ion-item *ngIf="chiesa[0].bibliografia">
+    <ion-item *ngIf="chiesa[0]?.bibliografia">
       <ion-label class="ion-text-wrap" color="dark" [innerHTML]="chiesa[0]?.bibliografia">
       </ion-label>
     </ion-item>

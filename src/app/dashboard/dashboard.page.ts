@@ -26,6 +26,8 @@ export class DashboardPage {
   zone: any;
   chieseRomane;
   destroy$: Subject<boolean> = new Subject<boolean>();
+  
+  chiesaScanned = [];
 
   constructor(
     private chieseRomaneService: ChieseRomaneService,
@@ -62,11 +64,52 @@ export class DashboardPage {
 
   }
 
+  getChiesaScanned(){
+
+    if (this.chieseRomane) {
+
+      this.chiesaScanned = this.chieseRomane
+        .map(
+          chiesa => {
+            return {
+              id: chiesa.id,
+              narrazione: chiesa.narrazione,
+              virtual_tour: chiesa.virtual_tour,
+              audio: chiesa.audio,
+              pmdb_galleria_foto: chiesa.pmdb_galleria_foto,
+              pmdb_location_address: chiesa.pmdb_location_address,
+              pmdb_location_city: chiesa.pmdb_location_city,
+              title: {
+                rendered: chiesa.title.rendered
+              },
+              beacons: [
+                {
+                  uuid: chiesa.uuid,
+                  major: chiesa.major,
+                  minor: chiesa.minor
+                },
+                {
+                  uuid: chiesa.uuid2,
+                  major: chiesa.major2,
+                  minor: chiesa.minor2
+                }
+              ]
+            }
+          }
+        ).filter(
+          chiesa =>
+            (chiesa.beacons[0].major == this.beaconEsterno?.major.toString() &&
+              chiesa.beacons[0].minor == this.beaconEsterno?.minor.toString())
+            ||
+            (chiesa.beacons[1].major == this.beaconInterno?.major.toString() &&
+              chiesa.beacons[1].minor == this.beaconInterno?.minor.toString())
+        )
+    }
+  }
+
   ionViewDidLeave(): void {
     this.stopRangingBeaconsInRegion()
 
-    this.destroy$.next(true);
-    this.destroy$.unsubscribe();
   }
 
   stopRangingBeaconsInRegion() {
@@ -94,11 +137,11 @@ export class DashboardPage {
           this.firebaseService.saveEntryRegion();
         }
 
+        this.getChiesaScanned();
+
       })
     });
   }
-
-
 
   /* toast message */
   alert(msg: string) {

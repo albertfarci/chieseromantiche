@@ -20,8 +20,11 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-virtual-tour [chieseRomane]="chieseRomane" [beaconInterno]="beaconInterno"
-    [beaconEsterno]="beaconEsterno" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
-  </app-virtual-tour>
+
+  <app-chiesa-detail-component [hidden]="!chiesaScanned[0]" [chiesa]="chiesaScanned" [interno]="!!beaconInterno"
+  [esterno]="!!beaconEsterno" [virtualTour]="true" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
+  </app-chiesa-detail-component>
+
+  <app-loading [hidden]="chiesaScanned[0]"></app-loading>
 
 </ion-content>
