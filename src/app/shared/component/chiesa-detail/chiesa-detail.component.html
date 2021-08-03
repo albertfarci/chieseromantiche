@@ -81,7 +81,7 @@
       </ion-col>
     </ion-row>
 
-    <div *ngIf="virtualTour && interno">
+    <div >
       <ion-item lines="none">
         <ion-icon class="title" slot="start" name="film-outline"></ion-icon>
         <span class="ion-text-wrap title x-large">
@@ -109,18 +109,7 @@
               ></ion-icon>
             </ion-button>
 
-            <ion-button
-              aria-label="pause"
-              *ngIf="nowPlayingAudioIndex == i && !audioIsPaused"
-              [color]="nowPlayingAudioIndex == i ? 'primary' : 'medium'"
-              (click)="playPlauseAudio(i, chiesa[0]?.audio )"
-            >
-              <ion-icon
-                ios="pause-outline"
-                md="pause-sharp"
-                slot="icon-only"
-              ></ion-icon>
-            </ion-button>
+            
           </ion-col>
 
           <ion-col>
