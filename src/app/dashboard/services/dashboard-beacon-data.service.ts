@@ -9,6 +9,8 @@ import { BluetoothLE } from '@ionic-native/bluetooth-le/ngx';
 export class DashboardBeaconDataService {
   delegate;
   beaconRegion
+
+  isSetupped:boolean = false;
   constructor(
     private toast: Toast,
     private ibeacon: IBeacon,
@@ -34,19 +36,22 @@ export class DashboardBeaconDataService {
   }
 
   setUpBeacon() {
-    // Request permission to use location on iOS
-    this.ibeacon.requestAlwaysAuthorization();
-    // create a new delegate and register it with the native layer
-    this.delegate = this.ibeacon.Delegate();
 
-    this.beaconRegion = this.ibeacon.BeaconRegion('deskBeacon', '476C6F62-616C-2D54-6167-000000000000');
+      // Request permission to use location on iOS
+      this.ibeacon.requestAlwaysAuthorization();
+      // create a new delegate and register it with the native layer
+      this.delegate = this.ibeacon.Delegate();
 
-    this.ibeacon.startRangingBeaconsInRegion(this.beaconRegion).then(
-      (data) => {
+      this.beaconRegion = this.ibeacon.BeaconRegion('deskBeacon', '476C6F62-616C-2D54-6167-000000000000');
 
-      },
-      error => this.alert(`Failed to begin monitoring: ${error}`)
-    );
+      this.ibeacon.startRangingBeaconsInRegion(this.beaconRegion).then(
+        (data) => {
+
+        },
+        error => this.alert(`Failed to begin monitoring: ${error}`)
+      );
+
+    
   }
 
   didRangeBeaconsInRegion() {

@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Beacon } from '@ionic-native/ibeacon/ngx';
 import { DashboardBeaconDataService } from './services/dashboard-beacon-data.service';
 import { Toast } from '@ionic-native/toast/ngx';
@@ -12,7 +12,7 @@ import { FirebaseService } from '../shared/services/firebase.service';
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
-export class DashboardPage {
+export class DashboardPage implements OnInit{
 
   didRangeBeaconsInRegion;
   didStartMonitoringForRegion;
@@ -20,12 +20,12 @@ export class DashboardPage {
 
   beacons: Beacon[] = [];
 
-  beaconInterno;
-  beaconEsterno;
+  beaconInterno : Beacon;
+  beaconEsterno : Beacon;
 
   zone: any;
   chieseRomane;
-  destroy$: Subject<boolean> = new Subject<boolean>();
+  destroy$: Subject<boolean> = new Subject<boolean>();;
   
   chiesaScanned = [];
 
@@ -35,13 +35,26 @@ export class DashboardPage {
     private ngZone: NgZone,
     private dashboardBeaconDataService: DashboardBeaconDataService,
     private firebaseService: FirebaseService
-  ) { }
+  ) { 
+    
+  }
+
+  ngOnInit(){
+    console.log("ciao")
+  }
 
   ionViewDidEnter(): void {
 
+
+    this.setupScanAction();
+    
+  }
+
+  setupScanAction() {
+
     this.dashboardBeaconDataService.setUpBeacon()
 
-    this.chieseRomaneService.getAllChiese().pipe(takeUntil(this.destroy$))
+    this.chieseRomaneService.getAllChiese()
     .subscribe(
       data => {
         this.chieseRomane = data
@@ -51,7 +64,6 @@ export class DashboardPage {
     )
 
     this.dashboardBeaconDataService.didRangeBeaconsInRegion()
-      .pipe(takeUntil(this.destroy$))
       .subscribe(
         data => {
 
@@ -62,6 +74,11 @@ export class DashboardPage {
         error => console.error()
       );
 
+  }
+
+  restartScan(){
+    this.chiesaScanned = [];
+    this.setupScanAction()
   }
 
   getChiesaScanned(){
@@ -110,6 +127,8 @@ export class DashboardPage {
   ionViewDidLeave(): void {
     this.stopRangingBeaconsInRegion()
 
+    // this.chieseRomane=[]
+    this.chiesaScanned = [];
   }
 
   stopRangingBeaconsInRegion() {
