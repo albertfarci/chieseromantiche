@@ -81,7 +81,7 @@
       </ion-col>
     </ion-row>
 
-    <div *ngIf="virtualTour && interno">
+    <div >
       <ion-item lines="none">
         <ion-icon class="title" slot="start" name="film-outline"></ion-icon>
         <span class="ion-text-wrap title x-large">
@@ -154,7 +154,7 @@
       </ion-item>
 
       <ion-item class="ion-margin-top" *ngIf="chiesa[0]?.virtual_tour">
-        <iframe id="iframe" [hidden]="!showIframe" width="100%" height="315"
+        <iframe id="iframe" [hidden]="!showIframe" style="width: 100%; height: 70vh;"
           [src]="dashboardTemplateService.iframeSanitize(chiesa[0])" allowfullscreen="true">
         </iframe>
       </ion-item>

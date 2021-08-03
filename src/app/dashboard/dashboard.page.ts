@@ -3,7 +3,6 @@ import { Beacon } from '@ionic-native/ibeacon/ngx';
 import { DashboardBeaconDataService } from './services/dashboard-beacon-data.service';
 import { Toast } from '@ionic-native/toast/ngx';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
-import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { FirebaseService } from '../shared/services/firebase.service';
 
