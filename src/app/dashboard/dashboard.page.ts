@@ -162,6 +162,13 @@ export class DashboardPage {
           this.firebaseService.saveEntryRegion();
         }
 
+
+        if (this.beaconInterno && this.beaconEsterno) {
+          this.stopRangingBeaconsInRegion()
+        }
+
+        this.getChiesaScanned();
+
       })
     });
   }
