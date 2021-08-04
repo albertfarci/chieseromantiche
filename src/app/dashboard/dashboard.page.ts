@@ -1,17 +1,18 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { Beacon } from '@ionic-native/ibeacon/ngx';
 import { DashboardBeaconDataService } from './services/dashboard-beacon-data.service';
 import { Toast } from '@ionic-native/toast/ngx';
 import { ChieseRomaneService } from '../shared/services/chiese-romane.service';
 import { Subject } from 'rxjs';
 import { FirebaseService } from '../shared/services/firebase.service';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
-export class DashboardPage implements OnInit{
+export class DashboardPage {
 
   didRangeBeaconsInRegion;
   didStartMonitoringForRegion;
@@ -19,14 +20,15 @@ export class DashboardPage implements OnInit{
 
   beacons: Beacon[] = [];
 
-  beaconInterno : Beacon;
-  beaconEsterno : Beacon;
+  beaconInterno: Beacon;
+  beaconEsterno: Beacon;
 
   zone: any;
   chieseRomane;
-  destroy$: Subject<boolean> = new Subject<boolean>();;
-  
+  destroy$: Subject<boolean> = new Subject<boolean>();
   chiesaScanned = [];
+
+  private readonly _start = new Subject<void>();
 
   constructor(
     private chieseRomaneService: ChieseRomaneService,
@@ -34,19 +36,15 @@ export class DashboardPage implements OnInit{
     private ngZone: NgZone,
     private dashboardBeaconDataService: DashboardBeaconDataService,
     private firebaseService: FirebaseService
-  ) { 
-    
-  }
+  ) {
 
-  ngOnInit(){
-    console.log("ciao")
   }
 
   ionViewDidEnter(): void {
 
 
     this.setupScanAction();
-    
+
   }
 
   setupScanAction() {
@@ -54,15 +52,21 @@ export class DashboardPage implements OnInit{
     this.dashboardBeaconDataService.setUpBeacon()
 
     this.chieseRomaneService.getAllChiese()
-    .subscribe(
-      data => {
-        this.chieseRomane = data
-      },
-      error => {
-      }
-    )
+      .pipe(
+        takeUntil(this.destroy$)
+      )
+      .subscribe(
+        data => {
+          this.chieseRomane = data
+        },
+        error => {
+        }
+      )
 
     this.dashboardBeaconDataService.didRangeBeaconsInRegion()
+      .pipe(
+        takeUntil(this.destroy$)
+      )
       .subscribe(
         data => {
 
@@ -75,12 +79,15 @@ export class DashboardPage implements OnInit{
 
   }
 
-  restartScan(){
+  restartScan() {
+
+    this.beaconEsterno = undefined;
+    this.beaconInterno = undefined;
     this.chiesaScanned = [];
     this.setupScanAction()
   }
 
-  getChiesaScanned(){
+  getChiesaScanned() {
 
     if (this.chieseRomane) {
 
@@ -131,8 +138,8 @@ export class DashboardPage implements OnInit{
   }
 
   stopRangingBeaconsInRegion() {
-    this.destroy$.next(true);
-    this.destroy$.unsubscribe();
+
+    this.destroy$.next();
   }
 
   onBeaconConnected(beacons: Beacon[]) {
@@ -154,8 +161,6 @@ export class DashboardPage implements OnInit{
           this.beaconEsterno = beacon
           this.firebaseService.saveEntryRegion();
         }
-
-        this.getChiesaScanned();
 
       })
     });

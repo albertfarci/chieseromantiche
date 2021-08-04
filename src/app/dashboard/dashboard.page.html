@@ -22,7 +22,7 @@
 
 
   <app-chiesa-detail-component [hidden]="!chiesaScanned[0]" [chiesa]="chiesaScanned" [interno]="!!beaconInterno"
-  [esterno]="!!beaconEsterno" [virtualTour]="true" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
+    [esterno]="!!beaconEsterno" [virtualTour]="true" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
   </app-chiesa-detail-component>
 
   <app-loading [hidden]="chiesaScanned[0]"></app-loading>
@@ -32,7 +32,7 @@
       <span class=" ion-text-wrap text larger">
         {{ 'inzia-visita-interattiva' | translatePipe}}
       </span>
-      <ion-button fill="outline" slot="end" color="dark"  (click)="restartScan()">
+      <ion-button fill="outline" slot="end" color="dark" (click)="restartScan()">
         <ion-icon name="radio-outline" class="title"></ion-icon>
       </ion-button>
     </ion-item>

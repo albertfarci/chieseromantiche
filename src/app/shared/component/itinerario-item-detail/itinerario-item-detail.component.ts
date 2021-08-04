@@ -12,13 +12,11 @@ export class ItinerarioItemDetailComponent implements OnChanges {
 
   constructor() { }
 
-  ngOnChanges(){
+  ngOnChanges() {
 
+    if (this.stop == true) {
 
-    console.log(this.stop)
-    if(this.stop == true){
-      
-      let  player = document.getElementById('multimedia');
+      let player = document.getElementById('multimedia');
       player = this.chiesa[0]?.audio;
     }
   }

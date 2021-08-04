@@ -29,9 +29,6 @@ export class ItinerarioItemDetailPage {
   }
 
   ionViewWillLeave() {
-    console.log('leave')
-    console.log(this.multimedia)
-
     this.stopAudio = true;
     this.showIframe = false
   }
