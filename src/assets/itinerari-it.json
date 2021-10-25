@@ -59,25 +59,33 @@
                 "id": 1018,
                 "title": {
                     "rendered": "Dolianova, Chiesa di San Pantaleo"
-                }
+                },
+                "pmdb_metabox_latitude": "39.38158339999999",
+                "pmdb_metabox_longitude": "9.174776399999999"
             },
             {
                 "id": 1982,
                 "title": {
                     "rendered": "Serdiana, Chiesa di Santa Maria di Sibiola"
-                }
+                },
+                "pmdb_metabox_latitude": "39.3675604",
+                "pmdb_metabox_longitude": "9.1220457"
             },
             {
                 "id": 1663,
                 "title": {
                     "rendered": "Ussana, Chiesa di San Saturnino"
-                }
+                },
+                "pmdb_metabox_latitude": "39.3941436",
+                "pmdb_metabox_longitude": "9.077751899999997"
             },
             {
                 "id": 1650,
                 "title": {
                     "rendered": "Samassi, Chiesa di San Gemiliano"
-                }
+                },
+                "pmdb_metabox_latitude": "39.4832873",
+                "pmdb_metabox_longitude": "8.9080172"
             }
         ]
     },
@@ -230,49 +238,65 @@
                 "id": 1052,
                 "title": {
                     "rendered": "Santa Giusta, Chiesa di Santa Giusta"
-                }
+                },
+                "pmdb_metabox_latitude": "39.8815163",
+                "pmdb_metabox_longitude": "8.607181800000001"
             },
             {
                 "id": 1924,
                 "title": {
                     "rendered": "Cabras, Chiesa di San Giovanni di Sinis"
-                }
+                },
+                "pmdb_metabox_latitude": "39.8822927",
+                "pmdb_metabox_longitude": "8.4386561"
             },
             {
                 "id": 1770,
                 "title": {
                     "rendered": "Fordongianus, chiesa di San Lussorio"
-                }
+                },
+                "pmdb_metabox_latitude": "39.9897263",
+                "pmdb_metabox_longitude": "8.7980249"
             },
             {
                 "id": 1993,
                 "title": {
                     "rendered": "Solarussa, Chiesa di San Gregorio"
-                }
+                },
+                "pmdb_metabox_latitude": "39.9552307",
+                "pmdb_metabox_longitude": "8.6803188"
             },
             {
                 "id": 1974,
                 "title": {
                     "rendered": "San Vero Milis, Chiesa di Santa Sofia"
-                }
+                },
+                "pmdb_metabox_latitude": "40.0125153",
+                "pmdb_metabox_longitude": "8.600171299999998"
             },
             {
                 "id": 1947,
                 "title": {
                     "rendered": "Milis, Chiesa di San Paolo"
-                }
+                },
+                "pmdb_metabox_latitude": "40.0456954",
+                "pmdb_metabox_longitude": "8.6351702"
             },
             {
                 "id": 1976,
                 "title": {
                     "rendered": "Santu Lussurgiu, San Leonardo De Siete Fuentes"
-                }
+                },
+                "pmdb_metabox_latitude": "40.17582999999999",
+                "pmdb_metabox_longitude": "8.6641325"
             },
             {
                 "id": 1740,
                 "title": {
                     "rendered": "Bidon\u00ec, Chiesa di San Pietro"
-                }
+                },
+                "pmdb_metabox_latitude": "40.11340209999999",
+                "pmdb_metabox_longitude": "8.933285999999999"
             }
         ]
     },
@@ -337,31 +361,41 @@
                 "id": 1721,
                 "title": {
                     "rendered": "Usellus, chiesa di Santa Lucia"
-                }
+                },
+                "pmdb_metabox_latitude": "39.8329464",
+                "pmdb_metabox_longitude": "8.8193823"
             },
             {
                 "id": 1733,
                 "title": {
                     "rendered": "Masullas, chiesa di S. Leonardo"
-                }
+                },
+                "pmdb_metabox_latitude": "39.70191319999999",
+                "pmdb_metabox_longitude": "8.784014599999999"
             },
             {
                 "id": 1978,
                 "title": {
                     "rendered": "Sardara, Chiesa di San Gregorio"
-                }
+                },
+                "pmdb_metabox_latitude": "39.61410070000001",
+                "pmdb_metabox_longitude": "8.823574599999997"
             },
             {
                 "id": 1670,
                 "title": {
                     "rendered": "Villamar, Chiesa di San Pietro"
-                }
+                },
+                "pmdb_metabox_latitude": "39.61820789999999",
+                "pmdb_metabox_longitude": "8.960548899999997"
             },
             {
                 "id": 1639,
                 "title": {
                     "rendered": "Gesico, Chiesa di Santa Maria d\u2019 Itria"
-                }
+                },
+                "pmdb_metabox_latitude": "39.6168549",
+                "pmdb_metabox_longitude": "9.1095698"
             }
         ]
     }

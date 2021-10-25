@@ -62,7 +62,7 @@ export class DashboardPage {
         error => {
         }
       )
-
+        
     this.dashboardBeaconDataService.didRangeBeaconsInRegion()
       .pipe(
         takeUntil(this.destroy$)
@@ -90,7 +90,7 @@ export class DashboardPage {
   getChiesaScanned() {
 
     if (this.chieseRomane) {
-
+      
       this.chiesaScanned = this.chieseRomane
         .map(
           chiesa => {
@@ -149,21 +149,17 @@ export class DashboardPage {
         if (beacon.rssi < -90 && beacon.minor == 1 && this.beaconEsterno) {
 
           this.firebaseService.saveExitRegion();
-          return;
-        }
-
-        if (beacon.rssi >= -90 && beacon.minor == 1 && !this.beaconInterno) {
-          this.beaconInterno = beacon
-          return;
+          
         }
 
         if (beacon.minor == 0 && !this.beaconEsterno) {
           this.beaconEsterno = beacon
           this.firebaseService.saveEntryRegion();
+        } else if (beacon.minor == 1 && !this.beaconInterno){
+          this.beaconInterno = beacon
         }
 
-
-        if (this.beaconInterno && this.beaconEsterno) {
+        if (this.beaconEsterno && this.beaconInterno) {
           this.stopRangingBeaconsInRegion()
         }
 

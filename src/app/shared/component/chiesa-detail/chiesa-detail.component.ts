@@ -1,4 +1,4 @@
-import { Component, Input, NgZone, OnChanges, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, NgZone, OnChanges, ViewChild } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
 import { DashboardTemplateService } from 'src/app/dashboard/services/dashboard-template.service';
@@ -11,6 +11,7 @@ import { IonRange } from '@ionic/angular';
   selector: 'app-chiesa-detail-component',
   templateUrl: './chiesa-detail.component.html',
   styleUrls: ['./chiesa-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChiesaDetailComponent {
 
