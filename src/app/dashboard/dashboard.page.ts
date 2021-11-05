@@ -155,13 +155,9 @@ export class DashboardPage {
         if (beacon.minor == 0 && !this.beaconEsterno) {
           this.beaconEsterno = beacon
           this.firebaseService.saveEntryRegion();
-        } else if (beacon.minor == 1 && !this.beaconInterno){
-          this.beaconInterno = beacon
-        }
 
-        if (this.beaconEsterno && this.beaconInterno) {
           this.stopRangingBeaconsInRegion()
-        }
+        } 
 
         this.getChiesaScanned();
 

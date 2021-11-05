@@ -1,6 +1,6 @@
 <ion-card *ngIf="chiesa.pmdb_categorie[0] != 'itinerari'" [routerLink]="['/tablinks/chiesa-detail', chiesa.id]">
 
-  <img *ngIf="chiesa.pmdb_galleria_foto.length > 0" src="{{chiesa?.pmdb_galleria_foto[0]}}" />
+  <img *ngIf="chiesa.pmdb_immagine_in_evidenza" src="{{chiesa?.pmdb_immagine_in_evidenza.large}}" />
   <ion-card-header>
     <ion-card-title class="title x-large" [innerHTML]="chiesa?.title.rendered | titleDeleteComa">
     </ion-card-title>

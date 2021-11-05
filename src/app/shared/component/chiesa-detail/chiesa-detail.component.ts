@@ -16,9 +16,8 @@ import { IonRange } from '@ionic/angular';
 export class ChiesaDetailComponent {
 
   @Input() chiesa;
-  @Input() virtualTour: boolean = false;
-  @Input() showIframe: boolean = true;
-  @Input() interno: boolean = false;
+  @Input() virtualTour: boolean = true;
+  @Input() showIframe: boolean = false;
   @Input() esterno: boolean = false;
   @Input() isPrefferedYet: boolean = false;
 

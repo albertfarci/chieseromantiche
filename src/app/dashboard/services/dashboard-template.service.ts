@@ -17,7 +17,11 @@ export class DashboardTemplateService {
 
     const str = unescape(escaped)
 
+    console.log(chiesa)
+
     let match;
+    return this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/watch?v=ujT33dDUsbc')
+
     while ((match = regex.exec(str)) !== null) {
 
       // This is necessary to avoid infinite loops with zero-width matches
@@ -25,7 +29,7 @@ export class DashboardTemplateService {
         regex.lastIndex++;
       }
 
-      return this.domSanitizer.bypassSecurityTrustResourceUrl(match[1])
+      return this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/watch?v=OAou2Klm-n0')
     }
 
   }
