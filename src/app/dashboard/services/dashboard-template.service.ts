@@ -20,17 +20,7 @@ export class DashboardTemplateService {
     console.log(chiesa)
 
     let match;
-    return this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/watch?v=ujT33dDUsbc')
-
-    while ((match = regex.exec(str)) !== null) {
-
-      // This is necessary to avoid infinite loops with zero-width matches
-      if (match.index === regex.lastIndex) {
-        regex.lastIndex++;
-      }
-
-      return this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/watch?v=OAou2Klm-n0')
-    }
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(chiesa.video);
 
   }
 }
