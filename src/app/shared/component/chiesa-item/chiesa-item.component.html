@@ -2,7 +2,7 @@
 
   <img *ngIf="chiesa.pmdb_immagine_in_evidenza" src="{{chiesa?.pmdb_immagine_in_evidenza.large}}" />
   <ion-card-header>
-    <ion-card-title class="title x-large" [innerHTML]="chiesa?.title.rendered | titleDeleteComa">
+    <ion-card-title class="title x-large" [innerHTML]="chiesa?.pmdb_titolo | titleDeleteComa">
     </ion-card-title>
   </ion-card-header>
   <ion-card-content class="text larger" [innerHTML]="chiesa?.pmdb_location_city | titleDeleteComa">
@@ -14,7 +14,7 @@
 
   <img *ngIf="chiesa.pmdb_galleria_foto.length > 0" src="{{chiesa?.pmdb_galleria_foto[0]}}" />
   <ion-card-header>
-    <ion-card-title class="title x-large" [innerHTML]="chiesa?.title.rendered | titleDeleteComa">
+    <ion-card-title class="title x-large" [innerHTML]="chiesa?.pmdb_titolo | titleDeleteComa">
     </ion-card-title>
   </ion-card-header>
   <ion-card-content class="text larger" [innerHTML]="chiesa?.pmdb_location_city | titleDeleteComa">

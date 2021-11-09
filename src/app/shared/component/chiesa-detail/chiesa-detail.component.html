@@ -3,7 +3,7 @@
   <ion-card-header>
 
     <ion-item lines="none">
-      <ion-card-title class="ion-text-wrap title x-large" [innerHTML]="chiesa[0]?.title?.rendered | titleDeleteComa"></ion-card-title>
+      <ion-card-title class="ion-text-wrap title x-large" [innerHTML]="chiesa[0]?.pmdb_titolo | titleDeleteComa"></ion-card-title>
       <ion-button *ngIf="!virtualTour"  color="dark" [hidden]="isPrefferedYet" fill="outline" slot="end" (click)="addToPreferiti()">
         <ion-icon name="heart-outline" class="title"></ion-icon>
       </ion-button>
@@ -27,13 +27,13 @@
 
   </ion-card-header>
 
-  <ion-slides pager="true" [options]="slideOpts" *ngIf="chiesa[0]?.pmdb_galleria_foto.length > 0">
-    <ion-slide *ngFor="let foto of chiesa[0]?.pmdb_galleria_foto">
+  <ion-slides pager="true" [options]="slideOpts" *ngIf="chiesa[0]?.galleria_foto.length > 0">
+    <ion-slide *ngFor="let foto of chiesa[0]?.galleria_foto">
       <img class="img-chiesa" src="{{foto}}" (click)="showImageFullScren(foto)" />
     </ion-slide>
   </ion-slides>
 
-  <img *ngIf="chiesa[0]?.pmdb_galleria_foto.length == 0" src="{{chiesa[0]?.pmdb_immagine_in_evidenza.large}}" />
+  <img *ngIf="chiesa[0]?.galleria_foto.length == 0" src="{{chiesa[0]?.pmdb_immagine_in_evidenza.large}}" />
   <ion-card-content>
 
     <ion-item lines="none">
@@ -91,60 +91,7 @@
         </span>
       </ion-item>
 
-      <ion-item lines="none" class="ion-margin-top" *ngIf="chiesa[0]?.audio ">
-      
-
-        <!-- player -->
-      <ion-grid class="audio-container" >
-        <ion-row class="ion-align-items-center">
-          <ion-col size="auto">
-            <ion-button
-              aria-label="play"
-              *ngIf="nowPlayingAudioIndex !== i || audioIsPaused"
-              [color]="nowPlayingAudioIndex == i ? 'primary' : 'medium'"
-              (click)="playPlauseAudio(i, chiesa[0]?.audio )"
-            >
-              <ion-icon
-                ios="play-outline"
-                md="play-sharp"
-                slot="icon-only"
-              ></ion-icon>
-            </ion-button>
-
-            
-          </ion-col>
-
-          <ion-col>
-            <ion-range
-              #range
-              min="0"
-              [max]="nowPlayingAudioIndex == i ? audioDuration : 100"
-              [value]="nowPlayingAudioIndex == i ? audioProgress : 0"
-              [color]="nowPlayingAudioIndex == i ? 'primary' : 'medium'"
-              pin="false"
-              mode="md"
-              debounce="0"
-              (touchstart)="pauseWhileSeeking(i)"
-              (mousedown)="pauseWhileSeeking(i)"
-              (touchend)="seek(i,$event)"
-              (mouseup)="seek(i, $event)"
-            ></ion-range>
-          </ion-col>
-          <ion-col size="auto">
-            <ion-text
-              class="timestamp"
-              [color]="nowPlayingAudioIndex == i ? 'dark' : 'medium'"
-              >{{nowPlayingAudioIndex == i && audioPlayer?
-              getAudioProgress(audioPlayer.currentTime) :
-              '00:00'}}</ion-text
-            >
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <!-- end player -->
-      </ion-item>
-
-      <ion-item class="ion-margin-top" *ngIf="chiesa[0]?.virtual_tour && nowPlayingAudioIndex !== i || audioIsPaused">
+      <ion-item class="ion-margin-top" *ngIf="chiesa[0]?.video">
         <iframe id="iframe" [hidden]="!showIframe" style="width: 100%; height: 70vh;"
           [src]="dashboardTemplateService.iframeSanitize(chiesa[0])" allowfullscreen="true">
         </iframe>
