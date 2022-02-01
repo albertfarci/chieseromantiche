@@ -1,4 +1,4 @@
-<ion-card *ngIf="chiesa.pmdb_categorie[0] != 'itinerari'" [routerLink]="['/tablinks/chiesa-detail', chiesa.id]">
+<!--<ion-card *ngIf="chiesa.pmdb_categorie[0] != 'itinerari'" [routerLink]="['/tablinks/chiesa-detail', chiesa.id]">
 
   <img *ngIf="chiesa.pmdb_immagine_in_evidenza" src="{{chiesa?.pmdb_immagine_in_evidenza.large}}" />
   <ion-card-header>
@@ -20,3 +20,15 @@
   <ion-card-content class="text larger" [innerHTML]="chiesa?.pmdb_location_city | titleDeleteComa">
   </ion-card-content>
 </ion-card>
+-->
+
+
+<ion-item *ngIf="chiesa.pmdb_categorie[0] != 'itinerari'" [routerLink]="['/tablinks/chiesa-detail', chiesa.id]">
+  <ion-avatar slot="start">
+    <img *ngIf="chiesa.pmdb_immagine_in_evidenza" src="{{chiesa?.pmdb_immagine_in_evidenza.large}}"/>
+  </ion-avatar>
+  <ion-label>
+    <h2  class="title x-large" [innerHTML]="chiesa?.pmdb_titolo | titleDeleteComa"></h2>
+    <p [innerHTML]="chiesa?.pmdb_location_city | titleDeleteComa"></p>
+  </ion-label>
+</ion-item>

@@ -1,24 +1,22 @@
 <ion-item class="ion-text-end" lines="none">
   <ion-col class="ion-text-center" *ngIf="!listMapConfiguration?.mapVisible">
-    <ion-button fill="outline" color="dark"  (click)="emitTabSelected(ListMapTypes[ListMapTypes.mapVisualization])">
-      <ion-icon slot="end" name="pin-outline" class="title"> </ion-icon>
+    <ion-button fill="outline" class="action-button" color="light" (click)="emitTabSelected(ListMapTypes[ListMapTypes.mapVisualization])">
       {{ 'maps' | translatePipe}}
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="!listMapConfiguration?.listVisible">
 
-    <ion-button fill="outline" color="dark" (click)="emitTabSelected(ListMapTypes[ListMapTypes.listVisualization])">
+    <ion-button fill="outline" class="action-button" color="light" (click)="emitTabSelected(ListMapTypes[ListMapTypes.listVisualization])">
       {{ 'lists' | translatePipe}}
-      <ion-icon slot="end" name="list-outline" class="title"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="listMapConfiguration?.filterVisible">
-    <ion-button fill="outline" color="dark">
-      <ion-icon name="filter-outline" class="title"></ion-icon>
+    <ion-button fill="outline" class="action-button" color="light">
+      <ion-icon name="filter-outline" color="light" class="title"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="listMapConfiguration?.curretnPositionVisible">
-    <ion-button fill="outline" color="dark" (click)="currentPosition()">
+    <ion-button fill="outline" class="action-button" color="light" (click)="currentPosition()">
       <ion-icon name="locate-outline" class="title"></ion-icon>
     </ion-button>
   </ion-col>

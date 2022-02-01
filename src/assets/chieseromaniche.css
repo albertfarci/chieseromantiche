@@ -1,12 +1,13 @@
 
 .title {
-    color: #8c0000; 
-    font-family: Playfair Display;
+    color: #ff7d0d; 
+    font-family: 'Marcellus';
+    font-size: 26px;
 }
 
 .text {
     color: #333333; 
-    font-family: Monserrat; 
+    font-family: 'Marcellus'; 
 }
 
 .xx-large {
@@ -28,7 +29,7 @@
 p {
     font-size: large !important;
     color: #333333; 
-    font-family: Monserrat; 
+    font-family: 'Marcellus'; 
 }
 
 .medium {
@@ -42,3 +43,7 @@ p {
 .image-header{
     height: 30px !important;
 }
+
+ion-tab-button {
+    --color-selected: #ff7d0d;
+   }

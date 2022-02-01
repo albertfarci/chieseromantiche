@@ -1,9 +1,9 @@
 <ion-row [hidden]="!listMapConfiguration?.listVisible" style="width: 100%;">
-  <app-chiese-list [chieseRomane]="chieseList">
+  <app-chiese-list [chieseRomane]="chieseList" style="width: 98%;">
   </app-chiese-list>
 </ion-row>
 
-<ion-row [hidden]="!listMapConfiguration?.mapVisible" style="width: 100%; height: 100%;">
+<ion-row [hidden]="!listMapConfiguration?.mapVisible" class="map-row">
   <app-map [chieseList]="chieseList" [listMapConfiguration]="listMapConfiguration" style="width: 100%; height: 100%;"
     [currentPosition]="currentPosition">
   </app-map>
