@@ -21,8 +21,8 @@
   </ion-header>
 
 
-  <app-chiesa-detail-component [hidden]="!chiesaScanned[0]" [chiesa]="chiesaScanned" [interno]="!!beaconInterno"
-    [esterno]="!!beaconEsterno" [virtualTour]="true" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
+  <app-chiesa-detail-component [hidden]="!chiesaScanned[0]" [chiesa]="chiesaScanned" [esterno]="!!beaconEsterno"
+    [virtualTour]="true" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
   </app-chiesa-detail-component>
 
   <app-loading [hidden]="chiesaScanned[0]"></app-loading>
