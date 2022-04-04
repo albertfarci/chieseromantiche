@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./progetto/progetto.module').then(m => m.ProgettoPageModule)
+    loadChildren: () => import('./tablinks/tablinks.module').then(m => m.TablinksPageModule)
   }
 
 
