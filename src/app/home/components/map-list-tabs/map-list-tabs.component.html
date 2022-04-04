@@ -17,13 +17,13 @@
   </ion-col>
   <ion-col class="ion-text-center" *ngIf="listMapConfiguration?.curretnPositionVisible">
     <ion-button fill="outline" class="action-button" color="light" (click)="currentPosition()">
-      <ion-icon name="locate-outline" class="title"></ion-icon>
+      <ion-icon name="locate-outline" class="title" color="light"></ion-icon>
     </ion-button>
   </ion-col>
   <ion-col class="ion-text-center">
 
-    <span class="ion-text-wrap text larger" *ngIf="chieseList?.length > 1">{{chieseList?.length}} {{ 'chiese' | translatePipe}}</span>
-    <span class="ion-text-wrap text larger" *ngIf="chieseList?.length == 1">{{chieseList?.length}} {{ 'chiesa' | translatePipe}}</span>
+    <span class="ion-text-wrap text larger" *ngIf="chieseList?.length > 1">{{chieseList?.length}} {{ 'punti' | translatePipe}}</span>
+    <span class="ion-text-wrap text larger" *ngIf="chieseList?.length == 1">{{chieseList?.length}} {{ 'punto' | translatePipe}}</span>
 
   </ion-col>
 </ion-item>
